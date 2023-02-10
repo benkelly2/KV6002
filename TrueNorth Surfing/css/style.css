@@ -2,9 +2,10 @@
 
 body {
     margin: 0;
-    font-family: Consolas;
+    font-family: Consolas; /** Change this to TNSC font provided */
 }
 
+/** Header CSS */
 .header {
     overflow: hidden;
     background-color: #F1F1F1;
@@ -27,13 +28,8 @@ body {
     font-weight: bold;
 }
 
-.header a:hover {
-    background-color: #DDD;
-    color: black;
-}
-
 .header a.active {
-    background-color: dodgerblue;
+    background-color: #7F7F7F;
     color: white;
 }
 
@@ -44,6 +40,10 @@ body {
 .header-right a {
     margin-left: 2px;
     margin-right: 2px;
+}
+.header-right a:hover {
+    background-color: #DDD;
+    color: black;
 }
 
 
@@ -58,6 +58,7 @@ body {
         float: none;
     }
 }
+/** End of Header CSS */
 
 .logo-icon {
     height: 40px;
