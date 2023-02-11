@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Members Page</title>
+</head>
+<body>
+
+    <div class="header">
+        <a href="../index.php"><img class="logo-icon" src="../img/TrueNorth Surf Club Logo.png" alt="TrueNorth Surf Club Logo"/></a>
+        <div class="header-right">
+            <a href="../index.php">Home</a>
+            <a href="gallery.php">Gallery</a>
+            <a href="contact.php">Contact Us</a>
+            <a href="signup.php">Sign Up</a>
+            <a class="active" href="members.php">For Members</a>
+        </div>
+    </div>
+
+    <h1>Members Page</h1>
+
+</body>
+</html>
