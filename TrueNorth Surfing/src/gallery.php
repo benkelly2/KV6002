@@ -8,7 +8,7 @@
 <body>
 
     <div class="header">
-        <a href="../index.php"><img class="logo-icon" src="../img/TrueNorth Surf Club Logo.png" alt="TrueNorth Surf Club Logo"/></a>
+        <a href="../index.php"><img class="logo-icon" src="../img/TrueNorthSurfClubLogo.png" alt="True North Surf Club Logo"/></a>
         <div class="header-right">
             <a href="../index.php">Home</a>
             <a class="active" href="gallery.php">Gallery</a>
