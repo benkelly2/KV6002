@@ -15,6 +15,7 @@
             <a class="active" href="contact.php">Contact Us</a>
             <a href="signup.php">Sign Up</a>
             <a href="members.php">For Members</a>
+            <a href="shop.php">Shop</a>
         </div>
     </div>
 
