@@ -5,6 +5,15 @@
     <link rel="stylesheet" href="css/style.css">
     <title>True North Surf Club</title>
 </head>
+
+<!--
+
+    TODO:   
+        - make individual css files for each page
+        - possibly set up endpoints for each page
+
+ -->
+
 <body>
 
     <div class="header">
