@@ -1,8 +1,8 @@
 
 .container {
-
+    background-color: red;
 }
 
 .sign-up-button {
-    
+    height: 100px;
 }
