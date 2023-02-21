@@ -13,8 +13,22 @@ $email = trim($email);
 $password = filter_has_var(INPUT_POST, 'password') ? $_POST['password']: null;
 $password = trim($password);
 
-if(empty($firstname) || empty($lastname)) {
+if(empty($firstname) || empty($lastname) || empty($email) || empty($password)) {
     echo"<p>You need to enter your first name and surname.  Please <a href=../signup.php>try again.</a></p>";
+    // possibly remove this, as html forms have 'required' meaning they must be filled before form can be processed
+}
+else {
+    try {
+        /** Clear any session settings that may be left from previous session */ // IF WE EVEN USE SESSIONS
+        unset($_SESSION['username']);
+        unset($_SESSION['logged-in']);
+
+        // code to connect to/query the database goes here
+        // can't rlly progress til we decide whats happening with database
+
+    } catch (Exception $e) {
+        echo "error message goes here";
+    }
 }
 
 ?>
