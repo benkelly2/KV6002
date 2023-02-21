@@ -20,28 +20,39 @@
         </div>
     </div>
 
-    <h1>Sign Up Here!</h1>
-    <p>This page may end up being part of the same page as contact.</p>
-    <form action=""> <!-- Change action to php script when ready -->
-        <div class="container">
-            <h2>Sign-up Form</h2>
-            <p>Sign up to become a True North member here:</p>
+    <h1>Sign-Up Page</h1>
+    
+    <div class="container">
 
-            <label >First Name</label> <!-- maybe make this bold with CSS -->
-            <input type="text" placeholder="Enter First Name" name="firstname" required>
-            
-            <label >Surname</label> <!-- maybe make this bold with CSS -->
-            <input type="text" placeholder="Enter Surname" name="surname" required>
+        <h2>Sign-Up Form</h2>
+        <p>Sign up to become a True North member here...</p>
+        
+        <div class="form-container" id="sign-up-form"> <!-- Change action to php script when ready -->    
+            <form action="./scripts/processForm.php">
+                <div>
+                    <label class="firstnameLabel">First Name</label> <!-- maybe make this bold with CSS -->
+                    <input type="text" class="firstname" placeholder="Enter First Name" name="firstname" required>
+                </div>
 
-            <label >Email</label> <!-- maybe make this bold with CSS -->
-            <input type="text" placeholder="Enter Email" name="email" required>
+                <div>
+                    <label class="lastnameLabel">Surname</label> <!-- maybe make this bold with CSS -->
+                    <input type="text" class="lastname" placeholder="Enter Surname" name="surname" required>
+                </div>
 
-            <label >Password</label> <!-- maybe make this bold with CSS -->
-            <input type="password" placeholder="Enter Password" name="password " required>
+                <div>
+                    <label class="emailLabel">Email</label> <!-- maybe make this bold with CSS -->
+                    <input type="text" class="email" placeholder="Enter Email" name="email" required>
+                </div>
 
-            <button class="sign-up-button" label="Sign Up"></button> <!-- Should add action=signUpFunction() or something -->
+                <div>
+                    <label class="passwordLabel">Password</label> <!-- maybe make this bold with CSS -->
+                    <input type="password" class="password" placeholder="Enter Password" name="password " required>
+                </div>
+
+                <input type="submit" class="submit" value="Submit">
+            </form>
         </div>
-    </form>
+    </div>
 
 </body>
 </html>
