@@ -30,23 +30,28 @@
         <div class="form-container" id="sign-up-form"> <!-- Change action to php script when ready -->    
             <form action="./scripts/processForm.php">
                 <div>
-                    <label class="firstnameLabel">First Name</label> <!-- maybe make this bold with CSS -->
+                    <label class="firstnameLabel">First Name</label>
                     <input type="text" class="firstname" placeholder="Enter First Name" name="firstname" required>
                 </div>
 
                 <div>
-                    <label class="lastnameLabel">Surname</label> <!-- maybe make this bold with CSS -->
+                    <label class="lastnameLabel">Surname</label>
                     <input type="text" class="lastname" placeholder="Enter Surname" name="surname" required>
                 </div>
 
                 <div>
-                    <label class="emailLabel">Email</label> <!-- maybe make this bold with CSS -->
+                    <label class="emailLabel">Email</label>
                     <input type="text" class="email" placeholder="Enter Email" name="email" required>
                 </div>
 
                 <div>
-                    <label class="passwordLabel">Password</label> <!-- maybe make this bold with CSS -->
+                    <label class="passwordLabel">Password</label>
                     <input type="password" class="password" placeholder="Enter Password" name="password " required>
+                </div>
+
+                <div>
+                    <label class="passwordLabel2">Re-enter password</label>
+                    <input type="password" class="password2" placeholder="Re-enter Password" name="password2" required>
                 </div>
 
                 <input type="submit" class="submit" value="Submit">
