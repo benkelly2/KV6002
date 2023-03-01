@@ -21,6 +21,17 @@
     </div>
 
     <h1>Members Page</h1>
-
+    <div class="box">
+        <div>
+            <h2>Sign up form</h2>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdI7BTC_c9MHynQfB8SoPyGgMY0m-b5uuZwmUwge26qqdBOlg/viewform" width="30%" height="100" style="border:1px solid black;">
+            </iframe>
+        </div>
+        <div>
+            <h2>Calendar</h2>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdI7BTC_c9MHynQfB8SoPyGgMY0m-b5uuZwmUwge26qqdBOlg/viewform" width="30%" height="100" style="border:1px solid black;">
+            </iframe>
+        </div>
+    </div>
 </body>
 </html>
