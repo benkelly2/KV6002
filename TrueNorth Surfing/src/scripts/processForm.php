@@ -1,7 +1,6 @@
 <?php
-// uncomment session stuff here (if we end up doing that)
-// ini_set("session.save_path", "/home/unn_w19014367/sessionData"); change path to correct path ofc
-// session_start();
+
+// ---------------------------- TODO: CHANGE THIS TO BE FOR CONTACT INSTEAD OF SIGNUP --------------------
 
 /** Storing form data in variables */
 $firstname = filter_has_var(INPUT_POST, 'firstname') ? $_POST['firstname']: null;

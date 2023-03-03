@@ -22,5 +22,31 @@
 
     <h1>Contact Page</h1>
 
+    <div class="form-container" id="contact-form">  
+        <form action="./scripts/processForm.php">
+            <div>
+                <label class="nameLabel">Name</label>
+                <input type="text" class="name" placeholder="Enter First Name" name="firstname" required>
+            </div>
+
+            <div>
+                <label class="emailLabel">Email</label>
+                <input type="text" class="email" placeholder="Enter Email" name="email" required>
+            </div>
+
+            <div>
+                <label class="subjectLabel">Subject</label>
+                <input type="password" class="subject" placeholder="Enter Password" name="password " required>
+            </div>
+
+            <div>
+                <label class="messageLabel">Message</label>
+                <input type="password" class="message" placeholder="Re-enter Password" name="password2" required>
+            </div>
+
+            <input type="submit" class="submit" value="Submit">
+        </form>
+    </div>
+
 </body>
 </html>
