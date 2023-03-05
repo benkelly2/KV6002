@@ -24,7 +24,7 @@
         var slideIndex = 0;
         showSlides();
 
-        function showSlide() {
+        function showSlides() {
             var i;
             var slides = document.getElementsByClassName("mySlides");
             var dots = document.getElementsByClassName("dot");
@@ -49,17 +49,17 @@
         <div class="slideshow-container">
 
             <div class="mySlides fade">
-                <img src="image1.jpg" style="width:100%">
+                <img src="./img/jumanji.png" style="width:100%">
                 <div class="text"><strong>Caption1</strong></div>
             </div>
 
             <div class="mySlides fade">
-                <img src="image2.jpg" style="width:100%">
+                <img src="./img/blackpanther.jpg" style="width:100%">
                 <div class="text"><strong>Caption2</strong></div>
             </div>
 
             <div class="mySlides fade">
-                <img src="image3.jpg" style="width:100%">
+                <img src="./img/gamenight.png" style="width:100%">
                 <div class="text"><strong>Caption3</strong></div>
             </div>
 
