@@ -22,10 +22,8 @@
 
     <!-- <h1>Sign-Up Page</h1> -->     
         <div class="box">
-        <div>
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdI7BTC_c9MHynQfB8SoPyGgMY0m-b5uuZwmUwge26qqdBOlg/viewform" width="60%" height="1200" style="border:1px solid black;">
             </iframe>
-        </div>
         </div>
     </div>
 
