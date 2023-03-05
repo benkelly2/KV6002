@@ -1,31 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/signup.css">
-    <title>Sign Up</title>
-</head>
-<body>
-
-    <div class="header">
-        <a href="../index.php"><img class="logo-icon" src="../img/TrueNorthSurfClubLogo.png" alt="True North Surf Club Logo"/></a>
-        <div class="header-right">
-            <a href="../index.php">Home</a>
-            <a href="gallery.php">Gallery</a>
-            <a href="contact.php">Contact Us</a>
-            <a class="active" href="signup.php">Sign Up</a>
-            <a href="members.php">For Members</a>
-            <a href="shop.php">Shop</a>
-        </div>
+<?php
+    //ini_set("session.save_path", "WHEREVER THE SESSION DATA FILE WILL BE");
+    session_start();
+    include("scripts/updated_functions.php");
+    echo headSetup("../css/shop.css");
+    echo bodyStartSetup();
+    echo genNav(array("index.php" => "Home", "gallery.php" => "Gallery", "contact.php" => "Contact Us", "signup.php" => "Sign Up", "members.php" => "For Members", "shop.php" => "Shop"));
+    ?>
+    <div class="box">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdI7BTC_c9MHynQfB8SoPyGgMY0m-b5uuZwmUwge26qqdBOlg/viewform" width="60%" height="1200" style="border:1px solid black;">
+        </iframe>
     </div>
-
-    <!-- <h1>Sign-Up Page</h1> -->     
-        <div class="box">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdI7BTC_c9MHynQfB8SoPyGgMY0m-b5uuZwmUwge26qqdBOlg/viewform" width="60%" height="1200" style="border:1px solid black;">
-            </iframe>
-        </div>
-    </div>
-
-</body>
-</html>
+    <?php
+    echo bodyClose("True North Surf Club Shop:");
+    ?>
