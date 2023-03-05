@@ -42,7 +42,7 @@ HEADERCLOSE;
         $headerClose .="\n";
         return $headerClose;
     }
-    function bodyStart($Titles){
+    function bodyStart($title){
         $bodyCont = <<<BODY
         <body>
             <div id="main-body">
