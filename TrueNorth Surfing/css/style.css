@@ -80,3 +80,11 @@ body {
     border-width: 1px;
     border-color: black;
 }
+
+.home-text-container {
+    display: block;
+    margin: auto;
+    width: 75%;
+    text-justify: auto;
+}
+

@@ -20,21 +20,62 @@
         </div>
     </div>
 
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlide() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i=0; i<slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (i=0; i<dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 4000);
+        }
+    </script>
+
     <div class="main-body">
         <h1>True North Surf Club</h1>
         <h2>The Most Northern Surfing England Surf Club</h2>
-        <img class="tnsc-banner" src="img/TrueNorthSurfClubBanner.png" alt="True North Surf Club Banner"/>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere nisl quam, 
-            vel rutrum mauris vehicula sed. Curabitur volutpat, urna malesuada euismod consequat, 
-            nulla arcu rutrum nulla, vitae rutrum magna est eget arcu. Nulla nisl orci,
-            eugiat a tellus a, porttitor commodo sem. Pellentesque ornare diam purus, at iaculis mauris facilisis quis. 
-            Mauris hendrerit, justo eget vulputate iaculis, nibh urna ornare dui, a accumsan nunc arcu nec tellus. 
-            Suspendisse vel justo a quam hendrerit rutrum dignissim quis dui. Ut pellentesque scelerisque elit aliquet suscipit. 
-            Ut euismod leo at turpis auctor auctor. Phasellus sollicitudin dui ac auctor dignissim. 
-            Praesent lacinia diam vitae leo egestas convallis. Ut vestibulum aliquam lorem condimentum cursus. 
-            Nullam gravida efficitur erat, quis venenatis turpis consectetur ac. Curabitur ultricies diam quis blandit sollicitudin. 
-            Nam finibus erat id nunc fermentum, in viverra sapien vehicula. Aenean efficitur commodo lacinia.
+
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <img src="image1.jpg" style="width:100%">
+                <div class="text"><strong>Caption1</strong></div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="image2.jpg" style="width:100%">
+                <div class="text"><strong>Caption2</strong></div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="image3.jpg" style="width:100%">
+                <div class="text"><strong>Caption3</strong></div>
+            </div>
+
+        </div>
+
+        <!-- <img class="tnsc-banner" src="img/TrueNorthSurfClubBanner.png" alt="True North Surf Club Banner"/> -->
+        <p class="home-text-container">
+            We would love you to join and get involved in shaping the future of TNSC!
+            <br>
+            Join here: https://forms.gle/zYtYgDFnCmS878jEA
+            <br>
+            We are run by local surfers, for local surfers. We can fundraise for and champion our local surf community! We’re a louder voice as a recognised group, and are independent of any one surf school - we love them all!
+            <br>
+            We are building a lovely community and it's a great way to buddy up with fellow surfers and hang out afterwards. Together we can promote sea safety and surf etiquette, build confidence and tackle those surf quirks using photo/video analysis or pointers from other members to help with your surf progression. 
+            <br>
+            Members have access to a WhatsApp Group, where event updates will be posted, where you can organise surfs and surf trips, ask questions, swap, lend or try gear.
         </p>
     </div>
 
