@@ -14,16 +14,14 @@ HEADCONTENT;
     return $headContent;
     }
 
-    function bodyStartSetup(){
-        $bodyContent = <<<BODYCONTENT
-    <body>
-
+    function headerSetup(){
+        $header = <<<HEADERSETUP
         <div class="header">
             <a href="../index.php"><img class="logo-icon" src="../img/TrueNorthSurfClubLogo.png" alt="True North Surf Club Logo"/></a>
             <div class="header-right">
-BODYCONTENT;
-        $bodyContent .="\n";
-        return $bodyContent;
+HEADERSETUP;
+        $header .="\n";
+        return $header;
     }
 
     function genNav(array $links){
@@ -36,14 +34,32 @@ BODYCONTENT;
         return $output;
         
     }
-    function bodyClose($heading){
-        $bodyEnd = <<<BODYEND
+    function headerClose(){
+        $headerClose = <<<HEADERCLOSE
         </div>
         </div>
-    <h1>$heading</h1>
-
-    </body>
-BODYEND;
-        $bodyEnd .="\n";
-        return $bodyEnd;
+HEADERCLOSE;
+        $headerClose .="\n";
+        return $headerClose;
     }
+    function bodyStart($Titles){
+        $bodyCont = <<<BODY
+        <body>
+            <div id="main-body">
+            <h1>$title</h1>
+BODY;
+        $bodyCont .="\n";
+        return $bodyCont;
+    }
+    function bodyEnd(){
+        $endBody = <<<BODYEND
+        </div>
+        </body>
+BODYEND;
+        $endBody .="\n";
+        return $endBody;
+
+    }
+
+
+    ?>
