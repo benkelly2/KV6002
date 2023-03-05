@@ -11,5 +11,5 @@
         </iframe>
     </div>
     <?php
-    echo bodyClose("True North Surf Club Shop:");
+    echo bodyClose("Sign-up Form");
     ?>
