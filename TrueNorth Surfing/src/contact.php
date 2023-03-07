@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/contact.css">
+    <script type="text/javascript" src="./scripts/contact_form.js"></script>
     <title>Contact</title>
 </head>
 <body>
@@ -22,16 +23,11 @@
 
     <h1>Contact Page</h1>
 
-    <div class="form-container" id="sign-up-form">  
-        <form action="./scripts/processForm.php">
+    <div class="form-container" id="contactform">  
+        <form action="./scripts/processForm.php" method="post" name="contact_form">
             <div>
-                <label class="firstnameLabel">First Name</label>
-                <input type="text" class="firstname" placeholder="Enter First Name" name="firstname" required>
-            </div>
-
-            <div>
-                <label class="lastnameLabel">Surname</label>
-                <input type="text" class="lastname" placeholder="Enter Surname" name="surname" required>
+                <label class="nameLabel">Your Name</label>
+                <input type="text" class="name" placeholder="Enter Your Name" name="name" required>
             </div>
 
             <div>
@@ -40,15 +36,9 @@
             </div>
 
             <div>
-                <label class="passwordLabel">Password</label>
-                <input type="password" class="password" placeholder="Enter Password" name="password " required>
+                <label class="messageLabel">Message</label>
+                <input type="text" class="message" placeholder="Enter Message" name="message" required>
             </div>
-
-            <div>
-                <label class="passwordLabel2">Re-enter password</label>
-                <input type="password" class="password2" placeholder="Re-enter Password" name="password2" required>
-            </div>
-
             <input type="submit" class="submit" value="Submit">
         </form>
     </div>
