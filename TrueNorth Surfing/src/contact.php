@@ -22,11 +22,16 @@
 
     <h1>Contact Page</h1>
 
-    <div class="form-container" id="contact-form">  
+    <div class="form-container" id="sign-up-form">  
         <form action="./scripts/processForm.php">
             <div>
-                <label class="nameLabel">Name</label>
-                <input type="text" class="name" placeholder="Enter First Name" name="firstname" required>
+                <label class="firstnameLabel">First Name</label>
+                <input type="text" class="firstname" placeholder="Enter First Name" name="firstname" required>
+            </div>
+
+            <div>
+                <label class="lastnameLabel">Surname</label>
+                <input type="text" class="lastname" placeholder="Enter Surname" name="surname" required>
             </div>
 
             <div>
@@ -35,18 +40,19 @@
             </div>
 
             <div>
-                <label class="subjectLabel">Subject</label>
-                <input type="password" class="subject" placeholder="Enter Password" name="password " required>
+                <label class="passwordLabel">Password</label>
+                <input type="password" class="password" placeholder="Enter Password" name="password " required>
             </div>
 
             <div>
-                <label class="messageLabel">Message</label>
-                <input type="password" class="message" placeholder="Re-enter Password" name="password2" required>
+                <label class="passwordLabel2">Re-enter password</label>
+                <input type="password" class="password2" placeholder="Re-enter Password" name="password2" required>
             </div>
 
             <input type="submit" class="submit" value="Submit">
         </form>
     </div>
+
 
 </body>
 </html>
