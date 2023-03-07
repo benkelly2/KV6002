@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<<<<<<< HEAD
     <div class="header">
         <a href="../index.php"><img class="logo-icon" src="../img/TrueNorthSurfClubLogo.png" alt="True North Surf Club Logo"/></a>
         <div class="header-right">
@@ -25,6 +26,20 @@
 
     <div class="form-container" id="contactform">  
         <form action="./scripts/processForm.php" method="post" name="contact_form">
+=======
+<?php
+    //ini_set("session.save_path", "WHEREVER THE SESSION DATA FILE WILL BE");
+    session_start();
+    include("scripts/functions.php");
+    echo headSetup("../css/contact.css");
+    echo headerSetup();
+    echo genNav(array("index.php" => "Home", "gallery.php" => "Gallery", "contact.php" => "Contact Us", "signup.php" => "Sign Up", "members.php" => "For Members", "shop.php" => "Shop"));
+    echo headerClose();
+    echo bodyStart("Contact Form:");
+?>
+    <div class="form-container" id="sign-up-form">  
+        <form action="./scripts/processForm.php">
+>>>>>>> cca98f154c0cc7d9d6b3203350ad6c4e8ea25473
             <div>
                 <label class="nameLabel">Your Name</label>
                 <input type="text" class="name" placeholder="Enter Your Name" name="name" required>
@@ -42,7 +57,6 @@
             <input type="submit" class="submit" value="Submit">
         </form>
     </div>
-
-
-</body>
-</html>
+<?php
+echo bodyEnd();
+?>
