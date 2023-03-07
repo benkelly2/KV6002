@@ -95,6 +95,7 @@ body {
     max-width: 1000px;
     position: relative;
     margin: auto;
+    border: solid 2px black;
 }
 
 /* Hide the images by default */
