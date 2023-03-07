@@ -20,50 +20,42 @@
         </div>
     </div>
 
-    <script>
-        var slideIndex = 0;
-        showSlides();
+    
 
-        function showSlides() {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}    
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";  
-            dots[slideIndex-1].className += " active";
-            setTimeout(showSlides, 4000); // Change image every 2 seconds
-        }
-    </script>
+    <!-- Slideshow container -->
+<div class="slideshow-container">
 
-    <div class="main-body">
-        <h1>True North Surf Club</h1>
-        <h2>The Most Northern Surfing England Surf Club</h2>
+<!-- Full-width images with number and caption text -->
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="img1.jpg" style="width:100%">
+  <div class="text">Caption Text</div>
+</div>
 
-        <div class="slideshow-container">
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="img2.jpg" style="width:100%">
+  <div class="text">Caption Two</div>
+</div>
 
-            <div class="mySlides fade">
-                <img src="./img/jumanji.png" style="width:100%">
-                <div class="text"><strong>Caption1</strong></div>
-            </div>
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="img3.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
 
-            <div class="mySlides fade">
-                <img src="./img/blackpanther.jpg" style="width:100%">
-                <div class="text"><strong>Caption2</strong></div>
-            </div>
+<!-- Next and previous buttons -->
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
 
-            <div class="mySlides fade">
-                <img src="./img/gamenight.png" style="width:100%">
-                <div class="text"><strong>Caption3</strong></div>
-            </div>
-
-        </div>
+<!-- The dots/circles -->
+<div style="text-align:center">
+<span class="dot" onclick="currentSlide(1)"></span>
+<span class="dot" onclick="currentSlide(2)"></span>
+<span class="dot" onclick="currentSlide(3)"></span>
+</div>
 
         <!-- <img class="tnsc-banner" src="img/TrueNorthSurfClubBanner.png" alt="True North Surf Club Banner"/> -->
         <p class="home-text-container">
