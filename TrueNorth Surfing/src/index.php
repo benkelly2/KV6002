@@ -1,28 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/style.css">
-    <title>True North Surf Club</title>
-</head>
-
-<body>
-
-    <div class="header">
-        <a href="index.php"><img class="logo-icon" src="../img/TrueNorthSurfClubLogo.png" alt="True North Surf Club Logo" /></a>
-        <div class="header-right">
-            <a class="active" href="index.php">Home</a>
-            <a href="gallery.php">Gallery</a>
-            <a href="contact.php">Contact Us</a>
-            <a href="signup.php">Sign Up</a>
-            <a href="members.php">For Members</a>
-            <a href="newshop.php">Shop</a>
-        </div>
-    </div>
+<?php
+    //ini_set("session.save_path", "WHEREVER THE SESSION DATA FILE WILL BE");
+    session_start();
+    include("scripts/functions.php");
+    echo headSetup("../css/members.css");
+    echo headerSetup();
+    echo genNav(array("index.php" => "Home", "gallery.php" => "Gallery", "contact.php" => "Contact Us", "signup.php" => "Sign Up", "members.php" => "For Members", "shop.php" => "Shop"));
+    echo headerClose();
+    echo bodyStart("True North Surf Club");
+    ?>
 
     <div class="main-body">
-        <h1>True North Surf Club</h1>
         <h2>The Most Northern Surfing England Surf Club</h2>
 
         <!-- Slideshow container -->
@@ -32,7 +19,7 @@
             <div class="mySlides fade">
                 <div class="numbertext">1 / 3</div>
                 <img src="../img/slideshow-image1.jpg" style="width:100%; height:80vh">
-                <div class="text">Caption Text</div>
+                <div class="text">Caption 1 - can be removed</div>
             </div>
 
             <div class="mySlides fade">
@@ -109,6 +96,6 @@
         }
     </script>
 
-</body>
-
-</html>
+    <?php
+    echo bodyEnd();
+    ?>
