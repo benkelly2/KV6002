@@ -2,7 +2,7 @@
     //ini_set("session.save_path", "WHEREVER THE SESSION DATA FILE WILL BE");
     session_start();
     include("scripts/functions.php");
-    echo headSetup("../css/members.css");
+    echo headSetup("TNSC - Home", "../css/style.css");
     echo headerSetup();
     echo genNav(array("index.php" => "Home", "gallery.php" => "Gallery", "contact.php" => "Contact Us", "signup.php" => "Sign Up", "members.php" => "For Members", "shop.php" => "Shop"));
     echo headerClose();
@@ -18,19 +18,19 @@
             <!-- Full-width images with number and caption text -->
             <div class="mySlides fade">
                 <div class="numbertext">1 / 3</div>
-                <img src="../img/slideshow-image1.jpg" style="width:100%; height:80vh">
+                <img src="../img/slideshow-image1.jpg">
                 <div class="text">Caption 1 - can be removed</div>
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext">2 / 3</div>
-                <img src="../img/slideshow-image2.jpg" style="width:100%; height:80vh">
+                <img src="../img/slideshow-image2.jpg">
                 <div class="text">Caption Two</div>
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext">3 / 3</div>
-                <img src="../img/slideshow-image3.jpg" style="width:100%; height:80vh"> 
+                <img src="../img/slideshow-image3.jpg"> 
                 <div class="text">Caption Three</div>
             </div>
 

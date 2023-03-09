@@ -1,5 +1,5 @@
 <?php
-    function headSetup($cssFile){
+    function headSetup($title, $cssFile){
         $headContent = <<<HEADCONTENT
         <!DOCTYPE html>
     <html lang="en">
@@ -7,7 +7,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="$cssFile">
-        <title>Contact</title>
+        <title>$title</title>
     </head>
 HEADCONTENT;
     $headContent .="\n";

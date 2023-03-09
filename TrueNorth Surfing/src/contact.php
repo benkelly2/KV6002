@@ -2,7 +2,7 @@
     //ini_set("session.save_path", "WHEREVER THE SESSION DATA FILE WILL BE");
     session_start();
     include("scripts/functions.php");
-    echo headSetup("../css/contact.css");
+    echo headSetup("TNSC - Contact", "../css/contact.css");
     echo headerSetup();
     echo genNav(array("index.php" => "Home", "gallery.php" => "Gallery", "contact.php" => "Contact Us", "signup.php" => "Sign Up", "members.php" => "For Members", "shop.php" => "Shop"));
     echo headerClose();

@@ -1,8 +1,20 @@
 * {box-sizing: border-box;}
 
+@font-face {
+    font-family: 'DIN 2014';
+    src: url('DIN2014-Bold.eot');
+    src: local('DIN 2014 Bold'), local('DIN2014-Bold'),
+        url('DIN2014-Bold.eot?#iefix') format('embedded-opentype'),
+        url('DIN2014-Bold.woff') format('woff'),
+        url('DIN2014-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
 body {
     margin: 0;
-    font-family: Consolas; /** Change this to TNSC font provided */
+   font-family: Consolas;
+   /* font-family: DIN2014-Bold; */ /* Can't get this to work atm */
 }
 
 /** Header CSS */
@@ -102,6 +114,7 @@ body {
 /* Hide the images by default */
 .mySlides {
     display: none;
+    height: 50vh;
 }
 
 /* Next & previous buttons */
@@ -180,4 +193,12 @@ body {
 
 .mySlides img {
     border-radius: 12px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.text {
+    background-color: black;
+    opacity: 40%;
 }
