@@ -1,26 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/members.css">
-    <title>Members Page</title>
-</head>
-<body>
-
-    <div class="header">
-        <a href="../index.php"><img class="logo-icon" src="../img/TrueNorthSurfClubLogo.png" alt="True North Surf Club Logo"/></a>
-        <div class="header-right">
-            <a href="../index.php">Home</a>
-            <a href="gallery.php">Gallery</a>
-            <a href="contact.php">Contact Us</a>
-            <a href="signup.php">Sign Up</a>
-            <a class="active" href="members.php">For Members</a>
-            <a href="shop.php">Shop</a>
-        </div>
+<?php
+    //ini_set("session.save_path", "WHEREVER THE SESSION DATA FILE WILL BE");
+    session_start();
+    include("scripts/functions.php");
+    echo headSetup("TNSC - Members", "../css/members.css");
+    echo headerSetup();
+    echo genNav(array("index.php" => "Home", "gallery.php" => "Gallery", "contact.php" => "Contact Us", "signup.php" => "Sign Up", "members.php" => "For Members", "shop.php" => "Shop"));
+    echo headerClose();
+    echo bodyStart("Members' Page");
+    ?>
+    
+    <div>
+        
     </div>
 
-    <h1>Members Page</h1>
- 
-</body>
-</html>
+    <?php
+    echo bodyEnd();
+    ?>
