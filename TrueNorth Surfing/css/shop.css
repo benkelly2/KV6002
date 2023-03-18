@@ -19,6 +19,10 @@
         "passwordLabel2 password2"
         "submit submit";
 }
+
+#shop-img {
+   width: 20%;
+}
   
 .firstname { grid-area: firstname; }
   
