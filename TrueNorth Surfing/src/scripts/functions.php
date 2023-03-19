@@ -5,6 +5,7 @@
     <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="$cssFile">
         <title>$title</title>
@@ -32,7 +33,6 @@ HEADERSETUP;
         }
         $output .= "\n";
         return $output;
-        
     }
     function headerClose(){
         $headerClose = <<<HEADERCLOSE
@@ -55,6 +55,7 @@ BODY;
         $endBody = <<<BODYEND
         </div>
         </body>
+    </html>
 BODYEND;
         $endBody .="\n";
         return $endBody;
