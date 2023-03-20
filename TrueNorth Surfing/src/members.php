@@ -67,6 +67,8 @@
         <?php
         
     }
- 
-    echo bodyEnd();
+    ?>
+    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Europe%2FLondon&showTitle=0&showNav=1&src=N2UyNDRmNWI2YmMyMWNkNTRmZTU0MDM5NjNjODM4NzljY2EzZDhmYmM4NGRkMGU5ZDI0NDQwZjEzNDlhYTg5NkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23E67C73" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    <?php
+        echo bodyEnd();
     ?>
