@@ -34,8 +34,24 @@ switch ( $action ) {
     case 'deleteEvent':
         deleteEvent();
         break;
+    case 'editCode':
+      editCode();
+      break;
+    case 'addCode':
+        addCode();
+        break;
+    case 'deleteCode':
+        deleteCode();
+        break;
+
+    case 'viewEvents':
+      listEvents();
+      break;
+    case 'viewCodes':
+        listCodes();
+        break;
   default:
-    listEvents();
+    adminHome();
 }
 
 function login() {
@@ -76,18 +92,18 @@ function editEvent(){
     
             // User has posted the event edit form: save the edited event
             if ( !$event = Event::getById( (int)$_POST['event_id'] ) ) {
-                header( "Location: admin.php?error=eventNotFound" );
+                header( "Location: admin.php?error=eventNotFound&action=viewEvents" );
                 return;
               }
           
               $event->storeFormValues( $_POST );
               $event->update();
-              header( "Location: admin.php?status=changesSaved" );
+              header( "Location: admin.php?action=viewEvents&status=changesSaved" );
           
             } elseif ( isset( $_POST['cancel'] ) ) {
           
               // User has cancelled their edits: return to the event list
-              header( "Location: admin.php" );
+              header( "Location: admin.php?action=viewEvents" );
             } else {
           
               // User has not posted the event edit form yet: display the form
@@ -111,12 +127,12 @@ function addEvent(){
         
         $event->storeFormValues( $_POST );
         $event->insert();
-        header( "Location: admin.php?status=changesSaved" );
+        header( "Location: admin.php?action=viewEvents&status=changesSaved" );
     
       } elseif ( isset( $_POST['cancel'] ) ) {
     
         // User has cancelled their edits: return to the event list
-        header( "Location: admin.php" );
+        header( "Location: admin.php?action=viewEvents" );
       } else {
     
         // User has not posted the event edit form yet: display the form
@@ -128,11 +144,11 @@ function addEvent(){
 function deleteEvent() {
 
     if ( !$event = Event::getById( (int)$_GET['event_id'] ) ) {
-        header( "Location: admin.php?error=eventNotFound" );
+        header( "Location: admin.php?action=viewEvents&error=eventNotFound" );
         return;
     }  
     $event->delete();
-    header( "Location: admin.php?status=eventDeleted" );
+    header( "Location: admin.php?action=viewEvents&status=eventDeleted" );
     }
 
 
@@ -156,7 +172,110 @@ function listEvents() {
     
     require( TEMPLATE_PATH . "/listEvents.php" );
 }
-      
+
+//Code for dealing with discount codes
+
+function editCode(){
+  $results = array();
+  $results['pageTitle'] = "Edit Code";
+  $results['formAction'] = 'editCode';
+
+  if ( isset( $_POST['saveChanges'] ) ) {
+
+      // User has posted the event edit form: save the edited event
+      if ( !$discount = Discount::getById( (int)$_POST['code_id'] ) ) {
+          header( "Location: admin.php?action=viewCodes&error=codeNotFound" );
+          return;
+        }
+    
+        $discount->storeFormValues( $_POST );
+        $discount->update();
+        header( "Location: admin.php?action=viewCodes&status=changesSaved" );
+    
+      } elseif ( isset( $_POST['cancel'] ) ) {
+    
+        // User has cancelled their edits: return to the event list
+        header( "Location: admin.php?action=viewCodes" );
+      } else {
+    
+        // User has not posted the event edit form yet: display the form
+        $results['discount'] = Discount::getById( (int)$_GET['code_id'] );
+       
+        require( TEMPLATE_PATH . "/adminDiscount.php" );
+      }
+  }
+
+
+
+function addCode(){
+$results = array();
+$results['pageTitle'] = "New Code";
+$results['formAction'] = 'addCode';
+
+if ( isset( $_POST['saveChanges'] ) ) {
+  echo json_encode($_POST);
+  // User has posted the add code form: save the new code
+  $discount = new Discount;
+  
+  $discount->storeFormValues( $_POST );
+  $discount->insert();
+  header( "Location: admin.php?status=changesSaved" );
+
+} elseif ( isset( $_POST['cancel'] ) ) {
+
+  // User has cancelled their edits: return to the code list
+  header( "Location: admin.php" );
+} else {
+
+  // User has not posted the code edit form yet: display the form
+  $results['discount'] = new Discount;
+  require( TEMPLATE_PATH . "/adminDiscount.php" );
+}
+}
+
+function deleteCode() {
+
+if ( !$discount = Discount::getById( (int)$_GET['code_id'] ) ) {
+  header( "Location: admin.php?action=viewCodes&error=codeNotFound" );
+  return;
+}  
+$discount->delete();
+header( "Location: admin.php?action=viewCodes&status=codeDeleted" );
+}
+
+
+
+
+function listCodes() {
+  $results = array();
+  $discount = new Discount;
+  $discount = $discount->getList();
+  $results['discount'] = $discount;
+  $results['pageTitle'] = "All Codes";
+
+  if ( isset( $_GET['error'] ) ) {
+    if ( $_GET['error'] == "codeNotFound" ) $results['errorMessage'] = "Error: Code not found.";
+  }
+
+  if ( isset( $_GET['status'] ) ) {
+    if ( $_GET['status'] == "changesSaved" ) $results['statusMessage'] = "Your changes have been saved.";
+    if ( $_GET['status'] == "codeDeleted" ) $results['statusMessage'] = "Code deleted.";
+  }
+
+  require( TEMPLATE_PATH . "/listDiscounts.php" );
+}
+
+function adminHome() {
+  if ( isset( $_POST['eventButton'] ) ) {
+    header( "Location: admin.php?action=viewEvents" );
+  }
+  if ( isset( $_POST['codeButton'] ) ) {
+      header( "Location: admin.php?action=viewCodes" );
+    }
+
+  require( TEMPLATE_PATH . "/adminHome.php");
+}      
+
 echo bodyEnd();
     
 
