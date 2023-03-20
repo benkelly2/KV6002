@@ -36,4 +36,5 @@
 
 
       <p><a href="admin.php?action=addEvent">Add a New Event</a></p>
+      <p><a href="admin.php">Return</a></p>
 

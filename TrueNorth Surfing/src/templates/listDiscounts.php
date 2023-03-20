@@ -36,4 +36,5 @@
 
 
       <p><a href="admin.php?action=addCode">Add a New Code</a></p>
+      <p><a href="admin.php">Return</a></p>
 
