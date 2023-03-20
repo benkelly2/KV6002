@@ -44,9 +44,27 @@
         // Loop through the events and echo out the information
         foreach ($events as $event) {
             if ($event->post_display == 1){
-            require( TEMPLATE_PATH . "/viewEvent.php");
+                require( TEMPLATE_PATH . "/viewEvent.php");
             }
         }
+
+        $codes = new Discount();
+        $codes = $codes->getList();
+        ?>
+        <table>
+        <tr>
+          <th>Company</th>
+          <th>Code</th>
+        </tr>
+        <?php
+        foreach ($codes as $code) {
+            if ($code->code_display == 1){
+                require( TEMPLATE_PATH . "/viewDiscount.php");
+            }
+        }
+        ?>
+              </table>
+        <?php
         
     }
  
