@@ -1,5 +1,5 @@
 <?php
-    //ini_set("session.save_path", "WHEREVER THE SESSION DATA FILE WILL BE");
+    //The members page shows a list of the available events
     session_start();
     include ("config.php");
     include("scripts/functions.php");
