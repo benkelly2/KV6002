@@ -1,6 +1,6 @@
 
     <div id="adminHeader">
-    <p>You are logged in as <b><?php echo htmlspecialchars( $_SESSION['username']) ?></b>. <a href="admin.php?action=logout"?>Log out</a></p>
+    <p>You are logged in as <b><?php echo htmlspecialchars( $_SESSION['username']) ?></b>. <a href="login.php?action=logout"?>Log out</a></p>
     </div>
 
     <h1><?php echo $results['pageTitle']?></h1>
