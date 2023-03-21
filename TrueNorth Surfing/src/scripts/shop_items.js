@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
         
         productItem.addEventListener('click', () => {
-            window.location.href = `../src/product-details.php?id=${product.id}`;
+            window.location.href = `../product-details.php?id=${product.id}`;
         });
         
         productGrid.appendChild(productItem);
