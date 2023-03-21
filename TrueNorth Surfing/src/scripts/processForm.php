@@ -40,14 +40,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		// send the email
 		$mail->Send();		
 		// redirect to contact page with success message
-		header("Location: contact.php?message=Email+sent+successfully");
+		header("Location: ../contact.php?message=Email+sent+successfully");
 		exit();
 		
 	} catch (Exception $e) {
 		// something went wrong
 		$error = "Error sending email. " . $mail->ErrorInfo;
 		// redirect to contact page with error message
-		header("Location: contact.php?message=" . urlencode($error));
+		header("Location: ../contact.php?message=" . urlencode($error));
 		exit();
 	}
 	
