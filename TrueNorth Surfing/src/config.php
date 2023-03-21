@@ -12,6 +12,7 @@ define( "JPEG_QUALITY", 85 );
 require( "../cms/event.php");
 require( "../cms/discount.php");
 
+
 function handleException( $exception ) {
     echo "Sorry, a problem occurred. Please try later.";
     echo ( $exception->getMessage() );
