@@ -1,5 +1,5 @@
 
-<form action="admin.php?action=login" method="post" style="width: 50%;">
+<form action="login.php?action=login" method="post" style="width: 50%;">
         <input type="hidden" name="login" value="true" />
 
 <?php if ( isset( $results['errorMessage'] ) ) { ?>
@@ -25,3 +25,6 @@
         </div>
 
       </form>
+      <div id="adminHeader">
+        <p>You are logged in as <b><?php echo htmlspecialchars( $_SESSION['username']) ?></b>. <a href="login.php?action=logout"?>Log out</a></p>
+      </div>
