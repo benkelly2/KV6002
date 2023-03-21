@@ -7,6 +7,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="$cssFile">
+        <link rel="stylesheet" href="https://use.typekit.net/wvm7epc.css">
         <title>$title</title>
     </head>
 HEADCONTENT;
