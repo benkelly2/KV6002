@@ -1,15 +1,32 @@
 <?php
     //The members page shows a list of the available events
+
+    require('config.php');
     session_start();
-    include ("config.php");
+    $action = isset( $_GET['action'] ) ? $_GET['action'] : "";
+    $username = isset( $_SESSION['username'] ) ? $_SESSION['username'] : "";
+    $admin_permision = isset( $_SESSION['admin_permision'] ) ? $_SESSION['admin_permision'] : "";
+    $member_permision = isset( $_SESSION['member_permision'] ) ? $_SESSION['member_permision'] : "";
+    
+    
     include("scripts/functions.php");
-    echo headSetup("TNSC - Members", "../css/members.css");
+    echo headSetup("TNSC - Home", "../css/style.css");
     echo headerSetup();
     echo genNav(array("index.php" => "Home", "gallery.php" => "Gallery", "contact.php" => "Contact Us", "signup.php" => "Sign Up", "members.php" => "For Members", "shop.php" => "Shop", "admin.php" => "Admin"));
     echo headerClose();
-    echo bodyStart("Members' Page");
+    echo bodyStart("True North Surf Club");
+    
+    
+    if ( $action != "login" && $action != "logout" && !$username )  {
+        memberlogin();
+        exit;
+      }
+    if ( !$member_permision == 1 && !$admin_permision == 1){
+        memberLogin();
+      exit;
+    
+    }
 
-    $action = isset( $_GET['action'] ) ? $_GET['action'] : "";
 
 
     switch ( $action ) {
@@ -29,6 +46,13 @@
        archive();
     }
     
+    //Members have to logged in to view content
+
+
+
+
+
+
     function viewEvent(){
         $event = new Event();
         $event = $event->getById(2);
