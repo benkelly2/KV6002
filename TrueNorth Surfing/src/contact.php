@@ -8,7 +8,7 @@
     echo headerClose();
     echo bodyStart("Contact Form:");
 ?>
-    <div class="form-container" id="sign-up-form">  
+    <div class="form-container" id="contact-form">  
         <form action="./scripts/processForm.php">
             <div>
                 <label class="nameLabel">Your Name</label>
