@@ -4,7 +4,7 @@
     include("scripts/functions.php");
     echo headSetup("TNSC - Gallery", "../css/gallery.css");
     echo headerSetup();
-    echo genNav(array("index.php" => "Home", "gallery.php" => "Gallery", "contact.php" => "Contact Us", "signup.php" => "Sign Up", "members.php" => "For Members", "shop.php" => "Shop"));
+    echo genNav(array("index.php" => "Home", "gallery.php" => "Gallery", "contact.php" => "Contact Us", "signup.php" => "Sign Up", "members.php" => "For Members", "shop.php" => "Shop", "admin.php" => "Admin"));
     echo headerClose();
     echo bodyStart("Gallery:");
 ?>
