@@ -14,7 +14,7 @@
     echo headerSetup();
     echo genNav(array("index.php" => "Home", "gallery.php" => "Gallery", "contact.php" => "Contact Us", "signup.php" => "Sign Up", "members.php" => "For Members", "shop.php" => "Shop", "admin.php" => "Admin"));
     echo headerClose();
-    echo bodyStart("True North Surf Club");
+    echo bodyStart("Members Page");
     
     
     if ( $action != "login" && $action != "logout" && !$username )  {
@@ -48,7 +48,20 @@
     
     //Members have to logged in to view content
 
-
+    function memberLogin(){
+        echo "Verified Members Only Area, please login with a verified account";
+        ?>
+        <div id="adminLogin">
+          <a href="login.php"?>Log In</a></p>
+        </div>
+        <?php
+        echo "If you dont have an account please sign up and wait for an organiser to verify you"
+        ?>
+        <div id="adminLogin">
+          <a href="login.php?action=signUp"?>Sign Up</a></p>
+        </div>
+        <?php
+  }
 
 
 
