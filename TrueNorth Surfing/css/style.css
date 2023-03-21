@@ -1,20 +1,10 @@
-* {box-sizing: border-box;}
-
-@font-face {
-    font-family: 'DIN 2014';
-    src: url('DIN2014-Bold.eot');
-    src: local('DIN 2014 Bold'), local('DIN2014-Bold'),
-        url('DIN2014-Bold.eot?#iefix') format('embedded-opentype'),
-        url('DIN2014-Bold.woff') format('woff'),
-        url('DIN2014-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
+* {
+    box-sizing: border-box;
+    font-family: "din-2014", sans-serif;
 }
 
 body {
     margin: 0;
-   font-family: Consolas;
-   /* font-family: DIN2014-Bold; */ /* Can't get this to work atm */
 }
 
 /** Header CSS */
@@ -33,6 +23,7 @@ body {
     font-size: 18px;
     line-height: 25px;
     border-radius: 4px;
+    transition: 0.3s;
 }
 
 .header a.logo {
@@ -80,6 +71,7 @@ body {
 .main-body {
     margin-left: 2em;
     margin-right: 2em;
+    height: 100vh;
 }
 
 .tnsc-banner {
@@ -95,12 +87,11 @@ body {
 
 .home-text-container {
     display: block;
+    padding: 2em;
     margin: auto;
     width: 75%;
     text-justify: auto;
 }
-
-* {box-sizing:border-box}
 
 /* Slideshow container */
 .slideshow-container {
