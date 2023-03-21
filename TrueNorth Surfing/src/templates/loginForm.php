@@ -25,6 +25,3 @@
         </div>
 
       </form>
-      <div id="adminHeader">
-        <p>You are logged in as <b><?php echo htmlspecialchars( $_SESSION['username']) ?></b>. <a href="login.php?action=logout"?>Log out</a></p>
-      </div>
