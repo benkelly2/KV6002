@@ -1,37 +1,75 @@
+#contactform {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    }
+
 #contactform form {
-display: flex;
-flex-direction: column;
-align-items: center;
-margin-top: 50px;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 50px;
+    width: 100%;
+    }
     
 #contactform label {
-display: block;
-margin-top: 10px;
-}
+    display: block;
+    margin-top: 10px;
+    }
     
-#contactform input[type="text"],
+
 #contactform textarea {
-padding: 10px;
-margin: 10px 0;
-border-radius: 5px;
-border: none;
-width: 100%;
-box-sizing: border-box;
-}
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    width: 100%;
+    box-sizing: border-box;
+    } 
+
+#field {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    width: 30%;
+    box-sizing: border-box;
+    }
     
 #contactform textarea {
-height: 150px;
-}
+    height: 170px;
+    }
     
 #contactform input[type="submit"] {
-padding: 10px;
-background-color: #4CAF50;
-color: white;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-width: 100%;
-box-sizing: border-box;
-font-size: 16px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 20%;
+    box-sizing: border-box;
+    font-size: 16px;
+    }
+
+#messagefield {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #000000;     
+}
+
+#thankyou {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+#thankyou p {
+    text-align: center;
+}
+
+::placeholder {
+  font-family: inherit;
+  font-size: inherit;
 }
