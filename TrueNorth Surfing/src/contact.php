@@ -4,7 +4,7 @@ session_start();
 include("scripts/functions.php");
 echo headSetup("TNSC - Contact Us","../css/contact.css");
 echo headerSetup();
-echo genNav(array("index.php" => "Home", "gallery.php" => "Gallery", "contact.php" => "Contact Us", "signup.php" => "Sign Up", "members.php" => "For Members", "shop.php" => "Shop"));
+echo genNav(array("index.php" => "Home", "gallery.php" => "Gallery", "contact.php" => "Contact Us", "signup.php" => "Sign Up", "members.php" => "For Members", "shop.php" => "Shop", "admin.php" => "Admin"));
 echo headerClose();
 echo bodyStart("Contact Us");
 if (!isset($_GET['message'])) {
@@ -42,9 +42,10 @@ if (isset($_GET['message'])) {
         echo '<script>alert("Error sending email. You will be redirected in 10 seconds.");setTimeout(function(){location.href="contact.php";},10000);</script>';
     }
 ?>
-<div id="thankyou"><p font-size="25px">Thanks for your message!</p></div>
+<div id="thankyou"><p font-size="75px">Thanks for your message! We will be in touch soon.</p></div>
 
 <?php
 }
+echo genFooter(array("cookies.php" => "Cookies Policy", "privacy.php" => "Privacy Policy"));
 echo bodyEnd();
 ?>

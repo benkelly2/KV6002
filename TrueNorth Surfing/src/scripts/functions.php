@@ -25,7 +25,6 @@ HEADERSETUP;
         $header .="\n";
         return $header;
     }
-
     function genNav(array $links){
 
         $output = "<ul>\n";
@@ -52,6 +51,31 @@ BODY;
         $bodyCont .="\n";
         return $bodyCont;
     }
+    function footerSetup(){
+        $footer = <<<FOOTERSETUP
+        <div class="footer">
+FOOTERSETUP;
+        $footer .="\n";
+        return $footer;
+    }
+
+    function genFooter(array $links){
+        $output = "<footer>\n";
+        $output .= "<ul>\n";
+        foreach($links as $key=>$Value){
+            $output .= "<a = href='$key'>$Value</a>\n";
+        }
+        $output .= "\n";
+        $output .= "</footer>\n";
+        return $output;
+    }
+    function footerClose(){
+        $footerClose = <<<FOOTERCLOSE
+        </div>
+FOOTERCLOSE;
+        $footerClose .="\n";
+        return $footerClose;
+    }
     function bodyEnd(){
         $endBody = <<<BODYEND
         </div>
@@ -64,4 +88,4 @@ BODYEND;
     }
 
 
-    ?>
+?>
