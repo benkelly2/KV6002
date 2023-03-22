@@ -6,5 +6,6 @@
 <div class="buttons">
           <input type="submit" name="eventButton" value="Events" />
           <input type="submit" name="codeButton" value="Discount Codes" />
+          <input type="submit" name="usersButton" value="Users" />
 </div>
 </form>

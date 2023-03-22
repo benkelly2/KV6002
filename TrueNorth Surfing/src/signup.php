@@ -10,12 +10,13 @@
     echo bodyStart("Sign-Up Form:");
 ?>
     <div class="box">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdI7BTC_c9MHynQfB8SoPyGgMY0m-b5uuZwmUwge26qqdBOlg/viewform" width="50%" height="1200" style="border:1px solid black; border-radius:12px;">
-        </iframe>
+        <!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdI7BTC_c9MHynQfB8SoPyGgMY0m-b5uuZwmUwge26qqdBOlg/viewform" width="50%" height="1200" style="border:1px solid black; border-radius:12px;">
+        </iframe> -->
     </div>
 
-    <div class="form-container">  
+    <div class="form-container">
         <form method="POST">
+            <h2>TNSC Membership Form</h2>
             <div>
                 <label class="emailLabel">Email</label>
                 <input type="text" class="email" placeholder="Enter Email" name="email" required>
@@ -51,14 +52,20 @@
             <div>
                 <label class="surfAbilityLabel">Surfing Ability</label>
                 <div class="surfAbility-radio-container">
-                    <input type="radio" id="neverSurfed" name="surfAbility" value="neverSurfed" >
-                    <label for="neverSurfed">“I never tried surfing before but I know how to swim.”</label>
+                    <div class="radio-item">
+                        <input type="radio" id="neverSurfed" name="surfAbility" value="neverSurfed" >
+                        <label for="neverSurfed">“I never tried surfing before but I know how to swim.”</label>
+                    </div>
                     <br>
-                    <input type="radio" id="rarelySurfed" name="surfAbility" value="rarelySurfed" >
-                    <label for="rarelySurfed">“I’ve tried surfing before, only a few times. I still struggle with the basics: paddling & popping up.”</label>
+                    <div class="radio-item">
+                        <input type="radio" id="rarelySurfed" name="surfAbility" value="rarelySurfed" >
+                        <label for="rarelySurfed">“I’ve tried surfing before, only a few times. I still struggle with the basics: paddling & popping up.”</label>
+                    </div>
                     <br>
-                    <input type="radio" id="hasSurfed" name="surfAbility" value="hasSurfed" >
-                    <label for="hasSurfed">"I’m able to stand up and go straight on a wave, with decent control.”</label>
+                    <div class="radio-item">
+                        <input type="radio" id="hasSurfed" name="surfAbility" value="hasSurfed" >
+                        <label for="hasSurfed">"I’m able to stand up and go straight on a wave, with decent control.”</label>
+                    </div>
                     <br>
                     <input type="radio" id="canSurf" name="surfAbility" value="canSurf" >
                     <label for="canSurf">"I can paddle 'Past the Break', catch 'Unbroken Waves' by myself and go Left & Right on the face of the wave."</label>

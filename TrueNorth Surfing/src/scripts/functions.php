@@ -19,13 +19,12 @@ HEADCONTENT;
     function headerSetup(){
         $header = <<<HEADERSETUP
         <div class="header">
-            <a href="../index.php"><img class="logo-icon" src="../img/TrueNorthSurfClubLogo.png" alt="True North Surf Club Logo"/></a>
+            <a href="./index.php"><img class="logo-icon" src="../img/TrueNorthSurfClubLogo.png" alt="True North Surf Club Logo"/></a>
             <div class="header-right">
 HEADERSETUP;
         $header .="\n";
         return $header;
     }
-
     function genNav(array $links){
 
         $output = "<ul>\n";
@@ -51,6 +50,31 @@ HEADERCLOSE;
 BODY;
         $bodyCont .="\n";
         return $bodyCont;
+    }
+    function footerSetup(){
+        $footer = <<<FOOTERSETUP
+        <div class="footer">
+FOOTERSETUP;
+        $footer .="\n";
+        return $footer;
+    }
+
+    function genFooter(array $links){
+        $output = "<footer>\n";
+        $output .= "<ul>\n";
+        foreach($links as $key=>$Value){
+            $output .= "<a = href='$key'>$Value</a>\n";
+        }
+        $output .= "\n";
+        $output .= "</footer>\n";
+        return $output;
+    }
+    function footerClose(){
+        $footerClose = <<<FOOTERCLOSE
+        </div>
+FOOTERCLOSE;
+        $footerClose .="\n";
+        return $footerClose;
     }
     function bodyEnd(){
         $endBody = <<<BODYEND
@@ -151,4 +175,4 @@ BODYEND;
 }
 
 
-    ?>
+?>

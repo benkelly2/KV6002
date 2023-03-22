@@ -11,6 +11,7 @@ define( "EVENT_THUMB_WIDTH", 120 );
 define( "JPEG_QUALITY", 85 );
 require( "../cms/event.php");
 require( "../cms/discount.php");
+require( "../cms/users.php");
 
 
 function handleException( $exception ) {
