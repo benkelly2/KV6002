@@ -62,6 +62,93 @@ BODYEND;
         return $endBody;
 
     }
+    // Add this code to your functions.php file
+
+    function getProductById($id) {
+        // Example product data
+        $products = [
+            [
+                'id' => 1,
+                'title' => 'TNSC T-Shirt',
+                'price' => 19.99,
+                'img' => '../TNSC_Pictures/TNSC_tshirt/11fdc54b-48c6-42f6-ac37-9dc6fe538ef6.jpeg',
+                'description' => 'A comfortable TNSC T-Shirt'
+            ],
+            [
+                'id' => 2,
+                'title' => 'TNSC Hoodie',
+                'price' => 39.99,
+                'img' => '../TNSC_Pictures/TNSC_tshirt/11fdc54b-48c6-42f6-ac37-9dc6fe538ef6.jpeg',
+                'description' => 'A comfortable TNSC T-Shirt'
+            ],
+            [
+                'id' => 3,
+                'title' => 'TNSC Cap',
+                'price' => 14.99,
+                'img' => '../TNSC_Pictures/TNSC_tshirt/11fdc54b-48c6-42f6-ac37-9dc6fe538ef6.jpeg',
+                'description' => 'A comfortable and stylish TNSC T-Shirt.'
+            ],
+            [
+                'id' => 4,
+                'title' => 'TNSC Wax',
+                'price' => '3.29',
+                'img' => '../TNSC_Pictures/TNSC_tshirt/11fdc54b-48c6-42f6-ac37-9dc6fe538ef6.jpeg',
+                'description' => 'A comfortable and stylish TNSC T-Shirt.'
+            ],
+            [
+                'id' => 5,
+                'title' => 'TNSC Membership',
+                'price' => '14.99',
+                'img' => '../TNSC_Pictures/TNSC_tshirt/11fdc54b-48c6-42f6-ac37-9dc6fe538ef6.jpeg',
+                'description' => 'A comfortable and stylish TNSC T-Shirt.'
+            ],
+            [
+                'id' => 6,
+                'title' => 'TNSC Membership',
+                'price' => '14.99',
+                'img' => '../TNSC_Pictures/TNSC_tshirt/11fdc54b-48c6-42f6-ac37-9dc6fe538ef6.jpeg',
+                'description' => 'A comfortable and stylish TNSC T-Shirt.'
+            ],
+            [
+                'id' => 7,
+                'title' => 'TNSC Membership',
+                'price' => '14.99',
+                'img' => '../TNSC_Pictures/TNSC_tshirt/11fdc54b-48c6-42f6-ac37-9dc6fe538ef6.jpeg',
+                'description' => 'A comfortable and stylish TNSC T-Shirt.'
+            ],
+            [
+                'id' => 8,
+                'title' => 'TNSC Membership',
+                'price' => '14.99',
+                'img' => '../TNSC_Pictures/TNSC_tshirt/11fdc54b-48c6-42f6-ac37-9dc6fe538ef6.jpeg',
+                'description' => 'A comfortable and stylish TNSC T-Shirt.'
+            ],
+            [
+                'id' => 9,
+                'title' => 'TNSC Membership',
+                'price' => '14.99',
+                'img' => '../TNSC_Pictures/TNSC_tshirt/11fdc54b-48c6-42f6-ac37-9dc6fe538ef6.jpeg',
+                'description' => 'A comfortable and stylish TNSC T-Shirt.'
+            ],
+            [
+                'id' => 10,
+                'title' => 'TNSC Membership',
+                'price' => '14.99',
+                'img' => '../TNSC_Pictures/TNSC_tshirt/11fdc54b-48c6-42f6-ac37-9dc6fe538ef6.jpeg',
+                'description' => 'A comfortable and stylish TNSC T-Shirt.'
+            ]
+        ];
+
+        // Search for the product with the given ID
+        foreach ($products as $product) {
+            if ($product['id'] == $id) {
+                return $product;
+            }
+        }
+
+        // If no matching product is found, return null
+        return null;
+}
 
 
     ?>

@@ -22,9 +22,9 @@
         if ($product) {
             // Display the product details (e.g., title, description, image, etc.)
             echo "<div class='product-details'>";
-            echo "<h2 class='product-title'>" . $product['title'] . "</h2>";
+            echo "<p><h2 class='product-title'>" . $product['title'] . "</h2> </p>";
             echo "<img src='" . $product['img'] . "' alt='" . $product['title'] . "' class='product-img'>";
-            echo "<p class='product-price'>$" . $product['price'] . "</p>";
+            echo "<p class='product-price'>£" . $product['price'] . "</p>";
             echo "<p class='product-description'>" . $product['description'] . "</p>";
             echo "</div>";
         } else {
