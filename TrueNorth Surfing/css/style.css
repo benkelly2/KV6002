@@ -88,10 +88,11 @@ body {
 
 .home-text-container {
     display: block;
-    padding: 2em;
+    padding: 2em 0 2em 0;
     margin: auto;
-    width: 75%;
+    max-width: 1000px;
     text-justify: auto;
+    text-align: justify;
 }
 
 /* Slideshow container */

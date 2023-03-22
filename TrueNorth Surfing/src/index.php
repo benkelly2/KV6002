@@ -53,9 +53,13 @@
             <br>
             Join here: https://forms.gle/zYtYgDFnCmS878jEA
             <br>
-            We are run by local surfers, for local surfers. We can fundraise for and champion our local surf community! We’re a louder voice as a recognised group, and are independent of any one surf school - we love them all!
+            We are run by local surfers, for local surfers. We can fundraise for and champion our local surf community!
             <br>
-            We are building a lovely community and it's a great way to buddy up with fellow surfers and hang out afterwards. Together we can promote sea safety and surf etiquette, build confidence and tackle those surf quirks using photo/video analysis or pointers from other members to help with your surf progression. 
+            We’re a louder voice as a recognised group, and are independent of any one surf school - we love them all!
+            <br>
+            We are building a lovely community and it's a great way to buddy up with fellow surfers and hang out afterwards.
+            <br>
+            Together we can promote sea safety and surf etiquette, build confidence and tackle those surf quirks using photo/video analysis or pointers from other members to help with your surf progression. 
             <br>
             Members have access to a WhatsApp Group, where event updates will be posted, where you can organise surfs and surf trips, ask questions, swap, lend or try gear.
         </p>

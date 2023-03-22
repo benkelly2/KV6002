@@ -53,6 +53,15 @@ switch ( $action ) {
     case 'deleteCode':
         deleteCode();
         break;
+    case 'editUser':
+      editUser();
+      break;
+    case 'addUser':
+        addUser();
+        break;
+    case 'deleteUser':
+        deleteUser();
+        break;
 
     case 'viewEvents':
       listEvents();
@@ -60,6 +69,9 @@ switch ( $action ) {
     case 'viewCodes':
         listCodes();
         break;
+    case 'viewUsers':
+      listUsers();
+      break;
   default:
     adminHome();
 }
@@ -270,9 +282,75 @@ function adminHome() {
   if ( isset( $_POST['codeButton'] ) ) {
       header( "Location: admin.php?action=viewCodes" );
     }
-
+  if ( isset( $_POST['usersButton'] ) ) {
+    header( "Location: admin.php?action=viewUsers" );
+  }
   require( TEMPLATE_PATH . "/adminHome.php");
 }      
+
+//Dealing with users 
+
+
+function editUser(){
+  $results = array();
+  $results['pageTitle'] = "Edit user";
+  $results['formAction'] = 'editUser';
+
+  if ( isset( $_POST['saveChanges'] ) ) {
+
+      // User has posted the event edit form: save the edited event
+      if ( !$user = user::getById( (int)$_POST['user_id'] ) ) {
+          header( "Location: admin.php?action=viewUsers&error=userNotFound" );
+          return;
+        }
+    
+        $user->storeFormValues( $_POST );
+        $user->update();
+        header( "Location: admin.php?action=viewUsers&status=changesSaved" );
+    
+      } elseif ( isset( $_POST['cancel'] ) ) {
+    
+        // User has cancelled their edits: return to the event list
+        header( "Location: admin.php?action=viewUsers" );
+      } else {
+    
+        // User has not posted the event edit form yet: display the form
+        $results['user'] = user::getById( (int)$_GET['user_id'] );
+       
+        require( TEMPLATE_PATH . "/adminUsers.php" );
+      }
+  }
+  function deleteUser() {
+
+    if ( !$user = user::getById( (int)$_GET['user_id'] ) ) {
+      header( "Location: admin.php?action=viewUsers&error=userNotFound" );
+      return;
+    }  
+    $user->delete();
+    header( "Location: admin.php?action=viewUsers&status=userDeleted" );
+    }
+
+    function listUsers() {
+      $results = array();
+      $user = new user;
+      $user = $user->getList();
+      $results['user'] = $user;
+      $results['pageTitle'] = "All Users";
+    
+      if ( isset( $_GET['error'] ) ) {
+        if ( $_GET['error'] == "userNotFound" ) $results['errorMessage'] = "Error: User not found.";
+      }
+    
+      if ( isset( $_GET['status'] ) ) {
+        if ( $_GET['status'] == "changesSaved" ) $results['statusMessage'] = "Your changes have been saved.";
+        if ( $_GET['status'] == "userDeleted" ) $results['statusMessage'] = "User deleted.";
+      }
+    
+      require( TEMPLATE_PATH . "/listUsers.php" );
+    }
+    
+
+
 
 echo bodyEnd();
     

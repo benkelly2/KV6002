@@ -19,7 +19,7 @@ HEADCONTENT;
     function headerSetup(){
         $header = <<<HEADERSETUP
         <div class="header">
-            <a href="../index.php"><img class="logo-icon" src="../img/TrueNorthSurfClubLogo.png" alt="True North Surf Club Logo"/></a>
+            <a href="./index.php"><img class="logo-icon" src="../img/TrueNorthSurfClubLogo.png" alt="True North Surf Club Logo"/></a>
             <div class="header-right">
 HEADERSETUP;
         $header .="\n";
