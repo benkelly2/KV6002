@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review</title>
+    <style>
+        .success {
+            color: green;
+        }
+        .warning {
+            color: red;
+        }
+        .stars {
+            display: inline-block;
+            font-size: 1.5em;
+            color: gold;
+        }
+    </style>
+    <script>
+        function hideFlashMessages() {
+            var flashMessages = document.querySelectorAll('.flashes li');
+            flashMessages.forEach(function (message) {
+                message.style.display = 'none';
+            });
+        }
+
+        setTimeout(hideFlashMessages, 5000);  // Hide messages after 5 seconds
+    </script>
+</head>
+<body>
+    <h1>Submit your review</h1>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <form action="/submit_review" method="POST">
+        <textarea name="review" rows="10" cols="30"></textarea>
+        <br>
+        <button type="submit">Submit Review</button>
+    </form>
+    <!-- rest of the file -->
+    <h2>Approved Reviews</h2>
+    <ul>
+        {% for review in approved_reviews %}
+        <li>
+            {{ review.content }}
+            <span class="stars">
+                {% for i in range(0, (review.sentiment // 20) | int) %}
+                    &#9733;
+                {% endfor %}
+            </span>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/admin/reviews">Admin: All Reviews</a></body>
+</html>

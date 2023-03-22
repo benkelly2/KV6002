@@ -1,5 +1,5 @@
 
-<form action="admin.php?action=login" method="post" style="width: 50%;">
+<form action="login.php?action=login" method="post" style="width: 50%;">
         <input type="hidden" name="login" value="true" />
 
 <?php if ( isset( $results['errorMessage'] ) ) { ?>

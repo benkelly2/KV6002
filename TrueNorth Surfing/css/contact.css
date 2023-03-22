@@ -1,34 +1,76 @@
-.form-container {  
-    width: 50%;
+#contactform {
     margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    gap: 2em 2em;
-    grid-auto-flow: row;
-    grid-template-areas:
-        "nameLabel name"
-        "emailLabel email"
-        "subjectLabel subject"
-        "messageLabel message"
-        "submit submit";
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 25%;
+    }
+
+#contactform form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 50px;
+    width: 100%;
+    }
+    
+#contactform label {
+    display: block;
+    margin-top: 10px;
+    }
+    
+
+#contactform textarea {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    width: 100%;
+    box-sizing: border-box;
+    } 
+
+#field {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    width: 30%;
+    box-sizing: border-box;
+    }
+    
+#contactform textarea {
+    height: 170px;
+    }
+    
+#contactform input[type="submit"] {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 20%;
+    box-sizing: border-box;
+    font-size: 16px;
+    }
+
+#messagefield {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #000000;     
 }
 
-.name { grid-area: name; }
+#thankyou {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
 
-.nameLabel { grid-area: nameLabel; }
+#thankyou p {
+    text-align: center;
+}
 
-.email { grid-area: email; }
-
-.emailLabel { grid-area: emailLabel; }
-
-.subject { grid-area: subject; }
-
-.subjectLabel { grid-area: subjectLabel; }
-
-.message { grid-area: message; }
-
-.messageLabel { grid-area: messageLabel; }
-
-.submit { grid-area: submit; }
-
+::placeholder {
+  font-family: inherit;
+  font-size: inherit;
+}

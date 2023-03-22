@@ -4,24 +4,34 @@ require('config.php');
 session_start();
 $action = isset( $_GET['action'] ) ? $_GET['action'] : "";
 $username = isset( $_SESSION['username'] ) ? $_SESSION['username'] : "";
+$admin_permision = isset( $_SESSION['admin_permision'] ) ? $_SESSION['admin_permision'] : "";
+
 
 include("scripts/functions.php");
 echo headSetup("TNSC - Home", "../css/style.css");
 echo headerSetup();
 echo genNav(array("index.php" => "Home", "gallery.php" => "Gallery", "contact.php" => "Contact Us", "signup.php" => "Sign Up", "members.php" => "For Members", "shop.php" => "Shop", "admin.php" => "Admin"));
 echo headerClose();
-echo bodyStart("True North Surf Club");
+echo bodyStart("Admin Page");
 
 
-if ( $action != "login" && $action != "logout" && !$username ) {
+if ( $action != "login" && $action != "logout" && !$username )  {
     login();
     exit;
   }
+if ( !$admin_permision == 1){
+  adminLogin();
+  exit;
+
+}
 
 switch ( $action ) {
     case 'login':
         login();
         break;
+    case 'login':
+      adminLogin();
+      break;
       case 'logout':
         logout();
         break;
@@ -43,6 +53,15 @@ switch ( $action ) {
     case 'deleteCode':
         deleteCode();
         break;
+    case 'editUser':
+      editUser();
+      break;
+    case 'addUser':
+        addUser();
+        break;
+    case 'deleteUser':
+        deleteUser();
+        break;
 
     case 'viewEvents':
       listEvents();
@@ -50,38 +69,29 @@ switch ( $action ) {
     case 'viewCodes':
         listCodes();
         break;
+    case 'viewUsers':
+      listUsers();
+      break;
   default:
     adminHome();
 }
 
 function login() {
-    $results = array();
-    $results['pageTitle'] = "Admin Login";
-    if( isset( $_POST['login'])){
-
-    if ( $_POST['username'] == ADMIN_USERNAME && $_POST['password'] == ADMIN_PASSWORD ) {
-
-        // Login successful: Create a session and redirect to the admin homepage
-        $_SESSION['username'] = ADMIN_USERNAME;
-        header( "Location: admin.php" );
-  
-      } else {
-  
-        // Login failed: display an error message to the user
-        $results['errorMessage'] = "Incorrect username or password. Please try again.";
-        require( TEMPLATE_PATH . "/loginForm.php" );
-        
-    } }else {
-        //Login form not posted
-        require(TEMPLATE_PATH . "/loginForm.php");
-}}
+  header('Location: login.php?action=login');
+}
 //Logout Function
 function logout() {
-    unset( $_SESSION['username'] );
-    header( "Location: admin.php" );
+
+    header( "Location: login.php?action=logout" );
   }
-    
-    
+function adminLogin(){
+      echo "Admin Only Area, please Login with a admin enabled account";
+      ?>
+      <div id="adminLogin">
+        <a href="login.php"?>Log In</a></p>
+      </div>
+      <?php
+}
 
 function editEvent(){
         $results = array();
@@ -272,9 +282,75 @@ function adminHome() {
   if ( isset( $_POST['codeButton'] ) ) {
       header( "Location: admin.php?action=viewCodes" );
     }
-
+  if ( isset( $_POST['usersButton'] ) ) {
+    header( "Location: admin.php?action=viewUsers" );
+  }
   require( TEMPLATE_PATH . "/adminHome.php");
 }      
+
+//Dealing with users 
+
+
+function editUser(){
+  $results = array();
+  $results['pageTitle'] = "Edit user";
+  $results['formAction'] = 'editUser';
+
+  if ( isset( $_POST['saveChanges'] ) ) {
+
+      // User has posted the event edit form: save the edited event
+      if ( !$user = user::getById( (int)$_POST['user_id'] ) ) {
+          header( "Location: admin.php?action=viewUsers&error=userNotFound" );
+          return;
+        }
+    
+        $user->storeFormValues( $_POST );
+        $user->update();
+        header( "Location: admin.php?action=viewUsers&status=changesSaved" );
+    
+      } elseif ( isset( $_POST['cancel'] ) ) {
+    
+        // User has cancelled their edits: return to the event list
+        header( "Location: admin.php?action=viewUsers" );
+      } else {
+    
+        // User has not posted the event edit form yet: display the form
+        $results['user'] = user::getById( (int)$_GET['user_id'] );
+       
+        require( TEMPLATE_PATH . "/adminUsers.php" );
+      }
+  }
+  function deleteUser() {
+
+    if ( !$user = user::getById( (int)$_GET['user_id'] ) ) {
+      header( "Location: admin.php?action=viewUsers&error=userNotFound" );
+      return;
+    }  
+    $user->delete();
+    header( "Location: admin.php?action=viewUsers&status=userDeleted" );
+    }
+
+    function listUsers() {
+      $results = array();
+      $user = new user;
+      $user = $user->getList();
+      $results['user'] = $user;
+      $results['pageTitle'] = "All Users";
+    
+      if ( isset( $_GET['error'] ) ) {
+        if ( $_GET['error'] == "userNotFound" ) $results['errorMessage'] = "Error: User not found.";
+      }
+    
+      if ( isset( $_GET['status'] ) ) {
+        if ( $_GET['status'] == "changesSaved" ) $results['statusMessage'] = "Your changes have been saved.";
+        if ( $_GET['status'] == "userDeleted" ) $results['statusMessage'] = "User deleted.";
+      }
+    
+      require( TEMPLATE_PATH . "/listUsers.php" );
+    }
+    
+
+
 
 echo bodyEnd();
     
