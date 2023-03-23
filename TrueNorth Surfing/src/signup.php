@@ -81,6 +81,11 @@
 
 <?php
     include("./scripts/database.php");
+
+    while(!isset($_POST['email'])) {
+        sleep(1);
+    }
+
     try {
         http_response_code(200);
 
@@ -96,7 +101,7 @@
 
     } catch (Exception $e) {
         http_response_code(500);
-        echo($ex);
+        echo($e);
     }
 
     echo bodyEnd();

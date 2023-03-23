@@ -6,7 +6,7 @@ echo headSetup("TNSC - Contact Us","../css/contact.css");
 echo headerSetup();
 echo genNav(array("index.php" => "Home", "gallery.php" => "Gallery", "contact.php" => "Contact Us", "signup.php" => "Sign Up", "members.php" => "For Members", "shop.php" => "Shop", "admin.php" => "Admin"));
 echo headerClose();
-echo bodyStart("Contact Us");
+echo bodyStart(null);
 if (!isset($_GET['message'])) {
 ?>
 <div class="form-container" id="contactform">  
@@ -42,7 +42,7 @@ if (isset($_GET['message'])) {
         echo '<script>alert("Error sending email. You will be redirected in 10 seconds.");setTimeout(function(){location.href="contact.php";},10000);</script>';
     }
 ?>
-<div id="thankyou"><p font-size="75px">Thanks for your message! We will be in touch soon.</p></div>
+<div id="thankyou"><p>Thanks for your message! We will be in touch soon.</p></div>
 
 <?php
 }
