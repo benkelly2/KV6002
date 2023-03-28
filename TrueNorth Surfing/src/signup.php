@@ -52,17 +52,14 @@
                         <input type="radio" id="neverSurfed" name="surfAbility" value="neverSurfed" >
                         <label for="neverSurfed">“I never tried surfing before but I know how to swim.”</label>
                     </div>
-                    <br>
                     <div class="radio-item">
                         <input type="radio" id="rarelySurfed" name="surfAbility" value="rarelySurfed" >
                         <label for="rarelySurfed">“I’ve tried surfing before, only a few times. I still struggle with the basics: paddling & popping up.”</label>
                     </div>
-                    <br>
                     <div class="radio-item">
                         <input type="radio" id="hasSurfed" name="surfAbility" value="hasSurfed" >
                         <label for="hasSurfed">"I’m able to stand up and go straight on a wave, with decent control.”</label>
                     </div>
-                    <br>
                     <input type="radio" id="canSurf" name="surfAbility" value="canSurf" >
                     <label for="canSurf">"I can paddle 'Past the Break', catch 'Unbroken Waves' by myself and go Left & Right on the face of the wave."</label>
                 </div>

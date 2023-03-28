@@ -100,39 +100,25 @@ body {
     grid-template-areas:
         "text-container-left text-container-middle text-container-right";
 } 
-.text-container-left {
-    grid-area: text-container-left;
-    margin: 0 1em 0 1em;
-    background-color:  #F1F1F1;
-    border: solid 1px black;
-    border-bottom: 4px solid black;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
-    border-radius: 12px;
-    padding: 1em;
-}
-.text-container-middle {
-    grid-area: text-container-middle;
+.text-container-left { grid-area: text-container-left; }
+.text-container-middle { grid-area: text-container-middle; }
+.text-container-right { grid-area: text-container-right; }
+
+.text-container-left, .text-container-middle, .text-container-right {
     margin: 0 1em 0 1em; 
     background-color:  #F1F1F1;
     border: solid 1px black;
     border-bottom: 4px solid black;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
-    border-radius: 12px;
-    padding: 1em;
-}
-.text-container-right {
-    grid-area: text-container-right;
-    margin: 0 1em 0 1em; 
-    background-color:  #F1F1F1;
-    border: solid 1px black;
-    border-bottom: 4px solid black;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3); */
     border-radius: 12px;
     padding: 1em;
 }
 .text-container-left:hover, .text-container-middle:hover, .text-container-right:hover {
     background-color: #DDD;
     transition: 0.3s;
+    transform: scale(1.1);
+    z-index: 2;
+    box-shadow: 2px 2px 2px #000;
 }
 
 
@@ -271,3 +257,5 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+

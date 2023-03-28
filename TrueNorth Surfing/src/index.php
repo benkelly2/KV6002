@@ -50,21 +50,25 @@ echo bodyStart("True North Surf Club");
     <!-- <img class="tnsc-banner" src="../img/TrueNorthSurfClubBanner.png" alt="True North Surf Club Banner"/> -->
         <div class="home-text-container">
             <div class="text-container-left">
-                <span>We would love you to join and get involved in shaping the future of TNSC!</span>
-                <br>
-                <span>Join here: https://forms.gle/zYtYgDFnCmS878jEA</span>
-                <br>
-                <span>are run by local surfers, for local surfers. We can fundraise for and champion our local surf community!</span>
+                <span>
+                    TNSC is a community of local surfers who are passionate about the sport and dedicated to helping each other progress. 
+                    <br><br>
+                    We're run by local surfers, for local surfers, and we champion and fundraise for our local surf community.
+                </span>
             </div>
             <div class="text-container-middle">
-                <span>We’re a louder voice as a recognised group, and are independent of any one surf school - we love them all!</span>
-                <br>
-                <span>We are building a lovely community and it's a great way to buddy up with fellow surfers and hang out afterwards.</span>
+                <span>
+                Our mission is to promote sea safety and surf etiquette, while providing opportunities for our members to progress and develop their skills. 
+                <br><br>
+                At TNSC, we believe that everyone can benefit from learning and growing together.
+                </span>
             </div>
             <div class="text-container-right">
-                <span>Together we can promote sea safety and surf etiquette, build confidence and tackle those surf quirks using photo/video analysis or pointers from other members to help with your surf progression.</span>
-                <br>
-                <span>Members have access to a WhatsApp Group, where event updates will be posted, where you can organise surfs and surf trips, ask questions, swap, lend or try gear.</span>
+               <span>
+               As a member of TNSC, you'll have access to our WhatsApp group, where you can connect with other surfers, organize surf trips, ask questions, and swap or lend gear. 
+               <br><br>
+               Join us today and be a part of shaping the future of TNSC!
+               </span>
             </div>
         </div>
 </div>
