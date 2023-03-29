@@ -40,7 +40,7 @@ public static function getList($numRows=10000) {
     $db_path = '../db/eventsDB.db';
     $conn = new PDO( 'sqlite:'.$db_path );
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "SELECT * FROM Product
+    $sql = "SELECT * FROM products
             ORDER BY product_id DESC LIMIT :numRows";
 
     $st = $conn->prepare( $sql );
@@ -102,7 +102,7 @@ public function insert(){
         $db_path = '../db/eventsDB.db';
         $conn = new PDO( 'sqlite:'.$db_path );
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "DELETE FROM discounts WHERE product_id = :product_id ";
+        $sql = "DELETE FROM products WHERE product_id = :product_id ";
         $st = $conn->prepare ( $sql );
         $st->bindValue( ":product_id", $this->product_id, PDO::PARAM_INT );
         $st->execute();
