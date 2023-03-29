@@ -230,32 +230,42 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: rgb(136, 136, 136);
+    background-color: rgb(194, 193, 193);
     color: #fff;
-    padding: 20px;
+    /*padding: 20px;*/
     margin-top: 50px;
 }
 
 footer ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
+    margin: auto;
+    /*padding: 5px;*/
     text-align: center;
-}
-
-footer li {
-    display: inline-block;
-    margin-right: 20px;
+    display: inline-flex;
 }
 
 footer a {
-    color: #fff;
+    text-align: center;
+    padding: 10px;
     text-decoration: none;
-    padding: 12px;
+    font-size: 18px;
+    line-height: 25px;
+    color: black;
 }
 
 footer a:hover {
     text-decoration: underline;
 }
 
+<<<<<<< HEAD
+.footer{
+    display: flex;
+}
 
+.badge-icon{
+    height: 70px;
+    width: auto;
+}
+=======
+
+>>>>>>> 319bd584eca90c6b4cbb70d33e477594e2ad2588
