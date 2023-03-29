@@ -58,33 +58,40 @@
         'WhatsApp Image 2022-06-10 at 10.22.49 AM.jpeg'
     ];
 
+    function resetImg(img) {
+        img.style.transform = "scale(1)";
+        img.style.transition = "transform 0.5s ease";
+        img.style.zIndex = 0;
+        img.style.display = "inline";
+    }
     function enlargeImg(img) {
         img.style.transform = "scale(5)";
         img.style.transition = "transform 0.5s ease";
         img.style.zIndex = 5;
         img.style.display = "block";
         img.style.margin = "auto";
-        console.log("Image has been enlarged!");
+
+        document.addEventListener("click", function resetOnClick(e) {
+            if(!img.contains(e.target)) {
+                resetImg(img);
+                document.removeEventListener("click", resetOnClick);
+            }
+        });
     }
-    function resetImg(img) {
-        img.style.transform = "scale(1)";
-        img.style.transition = "transform 0.5s ease";
-        img.style.zIndex = 0;
-        img.style.display = "inline";
-        img.style.margin = ".5em";
-        console.log("Image has been reset!");
-    }
+
 
     for (let i=0; i<images.length; i++) {
         let img = document.createElement("img");
         img.src = "../TNSC_Pictures/" + images[i];
         img.style.zIndex = 0;
-        // img.onclick = function() {
-        //     enlargeImg(this);
-        // };
-        // img.onmouseleave = function() {
-        //     resetImg(this);
-        // };
+        img.onclick = function() {
+            enlargeImg(this);
+        };
+        img.addEventListener("click", function(event) {
+            if(event.target.tagName === "IMG") {
+                enlargeImg(event.target);
+            }
+        });
         gallery.appendChild(img);
     }
 
