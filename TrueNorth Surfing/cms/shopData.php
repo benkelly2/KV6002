@@ -4,14 +4,14 @@ class Product
 {
 
 //Initialising Shop Product Parameters
-public $id = null;
+public $product_id = null;
 public $title = null;
 public $price = null;
 public $description = null;
 
 //adding each parameter to an array containing the data 
 public function __construct( $data=array() ){
-    if ( isset( $data['id'] ) ) $this->id = (int) $data['id'];
+    if ( isset( $data['product_id'] ) ) $this->product_id = (int) $data['product_id'];
     if ( isset( $data['title'] ) ) $this->title = preg_replace ( "/[^\.\,\-\_\'\"\@\?\!\:\$ a-zA-Z0-9()]/", "", $data['title'] );
     if ( isset( $data['price'] ) ) $this->price =  $data['price'] ;
     if ( isset( $data['description'] ) ) $this->description =  (int) $data['description'];
@@ -27,9 +27,9 @@ public static function getById( $id ) {
     $db_path = '../db/eventsDB.db';
     $conn = new PDO( 'sqlite:'.$db_path );
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "SELECT * FROM Product WHERE id = :id";
+    $sql = "SELECT * FROM products WHERE product_id = :product_id";
     $st = $conn->prepare( $sql );
-    $st->bindValue( ":id", $id, PDO::PARAM_INT );
+    $st->bindValue( ":product_id", $product_id, PDO::PARAM_INT );
     $st->execute();
     $row = $st->fetch(PDO::FETCH_ASSOC);
     $conn = null;

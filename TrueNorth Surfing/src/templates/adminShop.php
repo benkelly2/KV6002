@@ -14,21 +14,18 @@
     <ul>
 
     <li>
-    <label for="title">Company:</label>
+    <label for="title">Product:</label>
     <input type="text" id="title" name="title" value="<?php echo $results['product']->title; ?>">
     </li>
 
     <li>
-    <label for="description">Code:</label>
+    <label for="description">Description:</label>
     <input type="text" id="description" name="description" value="<?php echo $results['product']->description; ?>">
     </li>
 
     <li>
-    <label for="code_display">Display Code:</label>
-    <select id="form_code_display" name="code_display">
-    <option value="1" <?php echo ($results['product']->code_display == 1) ? 'selected' : ''; ?>>Yes</option>
-    <option value="0" <?php echo ($results['product']->code_display == 0) ? 'selected' : ''; ?>>No</option>
-    </select>
+    <label for="price">Price:</label>
+    <input type="number" min="0.00" max="1000000.00" id="price" name="price" value="<?php echo $results['product']->price; ?>">
     </li>
   
     </ul>
@@ -39,7 +36,7 @@
     </div>
     </form>
 
-<?php if ( $results['product']->code_id ) { ?>
-      <p><a href="admin.php?action=deleteCode&amp;code_id=<?php echo $results['product']->code_id ?>" onclick="return confirm('Delete This Code?')">Delete This Code</a></p>
+<?php if ( $results['product']->product_id ) { ?>
+      <p><a href="admin.php?action=deleteProduct&amp;product_id=<?php echo $results['product']->product_id ?>" onclick="return confirm('Delete This Product?')">Delete This Product</a></p>
 <?php } ?>
 
