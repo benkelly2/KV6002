@@ -1,10 +1,10 @@
 
 
-      <div id="adminHeader">
-        <p>You are logged in as <b><?php echo htmlspecialchars( $_SESSION['username']) ?></b>. <a href="admin.php?action=logout"?>Log out</a></p>
-      </div>
+<div id="adminHeader">
+<p>You are logged in as <b><?php echo htmlspecialchars( $_SESSION['username']) ?></b>. <a href="admin.php?action=logout"?>Log out</a></p>
+</div>
 
-      <h1>All Discount Codes</h1>
+<h1>All Discount Codes</h1>
 
 <?php if ( isset( $results['errorMessage'] ) ) { ?>
         <div class="errorMessage"><?php echo $results['errorMessage'] ?></div>
