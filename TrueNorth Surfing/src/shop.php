@@ -10,7 +10,8 @@
 <div class="product-grid">
     <!-- The product grid will be generated here -->
 </div>
-<script src="scripts/shop_items.js"></script>
+<script src="scripts/shop_items.php"></script>
 <?php
+    require("scripts/shop_items.php");
     echo bodyEnd();
 ?>
