@@ -25,7 +25,7 @@
 
     <li>
     <label for="price">Price:</label>
-    <input type="number" min="0.00" max="1000000.00" id="price" name="price" value="<?php echo $results['product']->price; ?>">
+    <input type="number" min="0.00" max="1000000.00" step="0.01" id="price" name="price" value="<?php echo $results['product']->price; ?>">
     </li>
   
     </ul>
