@@ -12,6 +12,7 @@ define( "JPEG_QUALITY", 85 );
 require( "../cms/event.php");
 require( "../cms/discount.php");
 require( "../cms/users.php");
+require( "../cms/shopData.php");
 
 
 function handleException( $exception ) {

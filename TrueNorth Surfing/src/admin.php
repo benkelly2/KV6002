@@ -62,7 +62,19 @@ switch ( $action ) {
     case 'deleteUser':
         deleteUser();
         break;
+    case 'editProduct':
+      editProduct();
+      break;
+    case 'addProduct':
+        addProduct();
+        break;
+    case 'deleteProduct':
+        deleteProduct();
+        break;
 
+    case 'viewProducts':
+      listProducts();
+      break;
     case 'viewEvents':
       listEvents();
       break;
@@ -285,6 +297,9 @@ function adminHome() {
   if ( isset( $_POST['usersButton'] ) ) {
     header( "Location: admin.php?action=viewUsers" );
   }
+  if ( isset( $_POST['productsButton'] ) ) {
+    header( "Location: admin.php?action=viewProducts" );
+  }
   require( TEMPLATE_PATH . "/adminHome.php");
 }      
 
@@ -348,6 +363,98 @@ function editUser(){
     
       require( TEMPLATE_PATH . "/listUsers.php" );
     }
+
+  //Product for dealing with  Products
+
+function editProduct(){
+  $results = array();
+  $results['pageTitle'] = "Edit Product";
+  $results['formAction'] = 'editProduct';
+
+  if ( isset( $_POST['saveChanges'] ) ) {
+
+      // User has posted the event edit form: save the edited event
+      if ( !$product = Product::getById( (int)$_POST['product_id'] ) ) {
+          header( "Location: admin.php?action=viewProducts&error=productNotFound" );
+          return;
+        }
+    
+        $product->storeFormValues( $_POST );
+        $product->update();
+        header( "Location: admin.php?action=viewProducts&status=changesSaved" );
+    
+      } elseif ( isset( $_POST['cancel'] ) ) {
+    
+        // User has cancelled their edits: return to the event list
+        header( "Location: admin.php?action=viewProducts" );
+      } else {
+    
+        // User has not posted the event edit form yet: display the form
+        $results['product'] = Product::getById( (int)$_GET['product_id'] );
+       
+        require( TEMPLATE_PATH . "/adminProduct.php" );
+      }
+  }
+
+
+
+function addProduct(){
+$results = array();
+$results['pageTitle'] = "New Product";
+$results['formAction'] = 'addProduct';
+
+if ( isset( $_POST['saveChanges'] ) ) {
+  echo json_encode($_POST);
+  // User has posted the add Product form: save the new Product
+  $product = new Product;
+  
+  $product->storeFormValues( $_POST );
+  $product->insert();
+  header( "Location: admin.php?status=changesSaved" );
+
+} elseif ( isset( $_POST['cancel'] ) ) {
+
+  // User has cancelled their edits: return to the Product list
+  header( "Location: admin.php" );
+} else {
+
+  // User has not posted the Product edit form yet: display the form
+  $results['product'] = new Product;
+  require( TEMPLATE_PATH . "/adminProduct.php" );
+}
+}
+
+function deleteProduct() {
+
+if ( !$product = Product::getById( (int)$_GET['product_id'] ) ) {
+  header( "Location: admin.php?action=viewProducts&error=productNotFound" );
+  return;
+}  
+$product->delete();
+header( "Location: admin.php?action=viewProducts&status=productDeleted" );
+}
+
+
+
+
+function listProducts() {
+  $results = array();
+  $product = new Product;
+  $product = $product->getList();
+  $results['product'] = $product;
+  $results['pageTitle'] = "All Products";
+
+  if ( isset( $_GET['error'] ) ) {
+    if ( $_GET['error'] == "productNotFound" ) $results['errorMessage'] = "Error: Product not found.";
+  }
+
+  if ( isset( $_GET['status'] ) ) {
+    if ( $_GET['status'] == "changesSaved" ) $results['statusMessage'] = "Your changes have been saved.";
+    if ( $_GET['status'] == "productDeleted" ) $results['statusMessage'] = "Product deleted.";
+  }
+
+  require( TEMPLATE_PATH . "/listShop.php" );
+}
     
 
 

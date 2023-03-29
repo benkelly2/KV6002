@@ -89,6 +89,7 @@ if (is_dir($target_dir)){
         img.style.zIndex = 5;
         img.style.display = "block";
         img.style.margin = "auto";
+        console.log("Image has been enlarged!");
     }
     function resetImg(img) {
         img.style.transform = "scale(1)";
@@ -96,18 +97,19 @@ if (is_dir($target_dir)){
         img.style.zIndex = 0;
         img.style.display = "inline";
         img.style.margin = ".5em";
+        console.log("Image has been reset!");
     }
 
     for (let i=0; i<images.length; i++) {
         let img = document.createElement("img");
         img.src = "../TNSC_Pictures/" + images[i];
         img.style.zIndex = 0;
-        img.onclick = function() {
-            enlargeImg(this);
-        };
-        img.onmouseleave = function() {
-            resetImg(this);
-        };
+        // img.onclick = function() {
+        //     enlargeImg(this);
+        // };
+        // img.onmouseleave = function() {
+        //     resetImg(this);
+        // };
         gallery.appendChild(img);
     }
 

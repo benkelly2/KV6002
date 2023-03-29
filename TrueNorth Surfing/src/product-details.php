@@ -10,7 +10,7 @@
 
 <?php
     // Get the product ID from the URL query parameter
-    $product_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+    $product_id = isset($_GET['product_id']) ? intval($_GET['product_id']) : 0;
 
     if ($product_id > 0) {
         // Load the product details using the product ID
