@@ -29,7 +29,7 @@ public static function getById( $id ) {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = "SELECT * FROM products WHERE product_id = :product_id";
     $st = $conn->prepare( $sql );
-    $st->bindValue( ":product_id", $product_id, PDO::PARAM_INT );
+    $st->bindValue( ":product_id", $id, PDO::PARAM_INT );
     $st->execute();
     $row = $st->fetch(PDO::FETCH_ASSOC);
     $conn = null;
