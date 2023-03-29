@@ -54,6 +54,7 @@ BODY;
     function footerSetup(){
         $footer = <<<FOOTERSETUP
         <div class="footer">
+            <img class="badge-icon" src="../img/sufingengland.png" alt="Surfing England Badge"/>
 FOOTERSETUP;
         $footer .="\n";
         return $footer;
@@ -61,12 +62,17 @@ FOOTERSETUP;
 
     function genFooter(array $links){
         $output = "<footer>\n";
+        $output .= <<<OUTPUT
+        <div class="footer">
+            <a href="https://www.surfingengland.org/"><img class="badge-icon" src="../img/sufingengland.png" alt="Surfing England Badge"/></a>\n
+OUTPUT;
         $output .= "<ul>\n";
         foreach($links as $key=>$Value){
-            $output .= "<a = href='$key'>$Value</a>\n";
+            $output .= "<li><a = href='$key'>$Value</a></li>\n";
         }
         $output .= "\n";
         $output .= "</footer>\n";
+        $output .= "</div>\n";
         return $output;
     }
     function footerClose(){
