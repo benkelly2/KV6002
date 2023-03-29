@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         productItem.classList.add('product-item');
         productItem.innerHTML = `
             <h2 class="product-title">${product.title}</h2>
-            <img src="${product.img}" alt="${product.title}" class="product-img">
+            <img src="../TNSC_Pictures/TNSC_tshirt/11fdc54b-48c6-42f6-ac37-9dc6fe538ef6.jpeg" alt="${product.title}" class="product-img">
             <p class="product-price">£${product.price}</p>
         `;
         
