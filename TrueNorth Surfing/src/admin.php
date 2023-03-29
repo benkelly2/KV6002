@@ -453,7 +453,7 @@ function listProducts() {
     if ( $_GET['status'] == "productDeleted" ) $results['statusMessage'] = "Product deleted.";
   }
 
-  require( TEMPLATE_PATH . "/listProducts.php" );
+  require( TEMPLATE_PATH . "/listShop.php" );
 }
     
 
