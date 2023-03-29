@@ -14,7 +14,7 @@ public function __construct( $data=array() ){
     if ( isset( $data['product_id'] ) ) $this->product_id = (int) $data['product_id'];
     if ( isset( $data['title'] ) ) $this->title = preg_replace ( "/[^\.\,\-\_\'\"\@\?\!\:\$ a-zA-Z0-9()]/", "", $data['title'] );
     if ( isset( $data['price'] ) ) $this->price =  $data['price'] ;
-    if ( isset( $data['description'] ) ) $this->description =  (int) $data['description'];
+    if ( isset( $data['description'] ) ) $this->description = $data['description'];
 }
 //Storing Form data in an object 
 public function storeFormValues ( $params ) {
