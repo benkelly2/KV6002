@@ -8,6 +8,7 @@
     echo headerClose();
     echo bodyStart("Gallery");
 ?>
+
 <div id='gallery'>
     
 </div>
@@ -57,9 +58,31 @@
         'WhatsApp Image 2022-06-10 at 10.22.49 AM.jpeg'
     ];
 
+    function enlargeImg(img) {
+        img.style.transform = "scale(5)";
+        img.style.transition = "transform 0.5s ease";
+        img.style.zIndex = 5;
+        img.style.display = "block";
+        img.style.margin = "auto";
+    }
+    function resetImg(img) {
+        img.style.transform = "scale(1)";
+        img.style.transition = "transform 0.5s ease";
+        img.style.zIndex = 0;
+        img.style.display = "inline";
+        img.style.margin = ".5em";
+    }
+
     for (let i=0; i<images.length; i++) {
         let img = document.createElement("img");
         img.src = "../TNSC_Pictures/" + images[i];
+        img.style.zIndex = 0;
+        img.onclick = function() {
+            enlargeImg(this);
+        };
+        img.onmouseleave = function() {
+            resetImg(this);
+        };
         gallery.appendChild(img);
     }
 
