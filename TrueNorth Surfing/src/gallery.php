@@ -1,6 +1,12 @@
 <?php
-    //ini_set("session.save_path", "WHEREVER THE SESSION DATA FILE WILL BE");
+    require('config.php');
     session_start();
+    $action = isset( $_GET['action'] ) ? $_GET['action'] : "";
+    $username = isset( $_SESSION['username'] ) ? $_SESSION['username'] : "";
+    $admin_permision = isset( $_SESSION['admin_permision'] ) ? $_SESSION['admin_permision'] : "";
+    #$member_permision = isset( $_SESSION['member_permision'] ) ? $_SESSION['member_permision'] : "";
+
+    //ini_set("session.save_path", "WHEREVER THE SESSION DATA FILE WILL BE");
     include("scripts/functions.php");
     echo headSetup("TNSC - Gallery", "../css/gallery.css");
     echo headerSetup();
@@ -12,6 +18,25 @@
 <div id='gallery'>
     
 </div>
+
+<?php
+$target_dir = "../img/";
+
+// Initialize an empty array to store the image filenames
+$images = array();
+
+// Open the target directory, and read its contents
+if (is_dir($target_dir)){
+  if ($dh = opendir($target_dir)){
+    while (($file = readdir($dh)) !== false){
+      if ($file != "." && $file != "..") {
+        array_push($images, $file);
+      }
+    }
+    closedir($dh);
+  }
+}
+?>
 
 <script type="text/javascript">
     // Reference to gallery div
@@ -89,5 +114,16 @@
 </script>
 
 <?php
+
+if (isset($_SESSION['admin_permision'])) {
+    ?>
+<form action="upload.php" method="post" enctype="multipart/form-data">
+  Select image to upload:
+  <input type="file" name="fileToUpload" id="fileToUpload">
+  <input type="submit" value="Upload Image" name="submit">
+</form>
+<?php
+}
+
 echo bodyEnd();
 ?>
