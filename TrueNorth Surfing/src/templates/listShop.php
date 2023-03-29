@@ -16,8 +16,8 @@
 
       <table>
         <tr>
-          <th>Item Id</th>
           <th>Item Name</th>
+          <th>Item Description</th>
         </tr>
 
 <?php foreach ( $results['product'] as $product ) { ?>
