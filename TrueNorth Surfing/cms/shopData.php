@@ -65,9 +65,9 @@ public function insert(){
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = "INSERT INTO products (title, price, description) VALUES (:title, :price, :description)";
         $st = $conn->prepare ( $sql );
-        $st->bindValue( ":title", $this->code_company, PDO::PARAM_STR );
-        $st->bindValue( ":price", $this->code_content, PDO::PARAM_STR );
-        $st->bindValue( ":description", $this->code_display, PDO::PARAM_STR );
+        $st->bindValue( ":title", $this->title, PDO::PARAM_STR );
+        $st->bindValue( ":price", $this->price, PDO::PARAM_STR );
+        $st->bindValue( ":description", $this->description, PDO::PARAM_STR );
         $st->execute();
         $conn = null;
     } 
@@ -85,10 +85,10 @@ public function insert(){
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = "UPDATE products SET title = :title, price=:price, description=:description WHERE product_id=:product_id";
         $st = $conn->prepare ( $sql );
-        $st->bindValue( ":title", $this->code_company, PDO::PARAM_STR );
-        $st->bindValue( ":price", $this->code_content, PDO::PARAM_STR );
-        $st->bindValue( ":description", $this->code_display, PDO::PARAM_STR );
-        $st->bindValue( ":product_id", $this->code_id, PDO::PARAM_INT );
+        $st->bindValue( ":title", $this->title, PDO::PARAM_STR );
+        $st->bindValue( ":price", $this->price, PDO::PARAM_STR );
+        $st->bindValue( ":description", $this->description, PDO::PARAM_STR );
+        $st->bindValue( ":product_id", $this->product_id, PDO::PARAM_INT );
         $st->execute();
         $this->product_id = $conn->lastInsertId();
         $conn = null;
