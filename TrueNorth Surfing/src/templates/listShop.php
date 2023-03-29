@@ -22,7 +22,7 @@
 
 <?php foreach ( $results['product'] as $product ) { ?>
 
-        <tr onclick="location='admin.php?action=editCode&amp;product_id=<?php echo $product->product_id?>'">
+        <tr onclick="location='admin.php?action=editProduct&amp;product_id=<?php echo $product->product_id?>'">
           <td><?php echo $product->title?></td>
           <td>
             <?php echo $product->description?>
