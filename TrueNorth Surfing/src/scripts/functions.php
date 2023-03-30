@@ -25,15 +25,20 @@ HEADERSETUP;
         $header .="\n";
         return $header;
     }
-    function genNav(array $links){
-
-        $output = "<ul>\n";
-        foreach($links as $key=>$Value){
-            $output .= "<a = href='$key'>$Value</a>\n";
+    function genNav(array $links) {
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
         }
-        $output .= "\n";
+        $basketCount = isset($_SESSION["basket"]) ? count($_SESSION["basket"]) : 0;
+        $output = '<div class="header-nav">';
+        foreach ($links as $url => $label) {
+            $output .= "<a href=\"$url\">$label</a>";
+        }
+        $output .= "<a href=\"basket.php\"><i class=\"fas fa-shopping-basket\"></i><span id=\"basket-count\">$basketCount</span></a>";
+        $output .= '</div>';
         return $output;
-    }
+    }    
+    
     function headerClose(){
         $headerClose = <<<HEADERCLOSE
         </div>
