@@ -1,5 +1,3 @@
-<!-- <link rel="stylesheet" href="../css/loginForm.css"> -->
-
 <div class="form-container">
   <form action="login.php?action=login" method="POST">
     <input type="hidden" name="login" value="true" />
