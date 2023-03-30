@@ -1,6 +1,6 @@
 <div id="adminHeader">
     <p>You are logged in as <b><?php echo htmlspecialchars( $_SESSION['username']) ?></b>. <a href="login.php?action=logout"?>Log out</a></p>
-    </div>
+    </div>user
 
     <h1><?php echo $results['pageTitle']?></h1>
 
@@ -19,8 +19,49 @@
     </li>
 
     <li>
-    <label for="email">Code:</label>
+    <label for="email">Email:</label>
     <input type="text" id="email" name="email" value="<?php echo $results['user']->email; ?>" readonly>
+    </li>
+
+    <li>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" value="<?php echo $results['user']->username; ?>" readonly>
+    </li>
+    <li>
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" value="<?php echo $results['user']->firstName; ?>" readonly>
+    </li>
+    <li>
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" value="<?php echo $results['user']->lastName; ?>" readonly>
+    </li>
+    <li>
+    <label for="nickname">Nickname:</label>
+    <input type="text" id="nickname" name="nickname" value="<?php echo $results['user']->nickname; ?>" readonly>
+    </li>
+    <li>
+    <label for="dob">Date of Birth:</label>
+    <input type="text" id="dob" name="dob" value="<?php echo $results['user']->dob; ?>" readonly>
+    </li>
+    <li>
+    <label for="phoneNo">Phone Number:</label>
+    <input type="text" id="phoneNo" name="phoneNo" value="<?php echo $results['user']->phoneNo; ?>" readonly>
+    </li>
+    <li>
+    <label for="postcode">Postcode:</label>
+    <input type="text" id="postcode" name="postcode" value="<?php echo $results['user']->postcode; ?>" readonly>
+    </li>
+    <li>
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" value="<?php echo $results['user']->address; ?>" readonly>
+    </li>
+    <li>
+    <label for="surfAbility">Surfing Ability:</label>
+    <input type="text" id="surfAbility" name="surfAbility" value="<?php echo $results['user']->surfAbility; ?>" readonly>
+    </li>
+    <li>
+    <label for="notes">How Client Found Us:</label>
+    <input type="text" id="notes" name="notes" value="<?php echo $results['user']->notes; ?>" readonly>
     </li>
 
 
