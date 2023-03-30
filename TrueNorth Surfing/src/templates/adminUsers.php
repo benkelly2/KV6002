@@ -67,7 +67,7 @@
 
     <li>
     <label for="membership_permission">Verified Member:</label>
-    <select id="form_membership_permission" name="membership_permission">
+    <select id="membership_permission" name="membership_permission">
     <option value="1" <?php echo ($results['user']->membership_permission == 1) ? 'selected' : ''; ?>>Yes</option>
     <option value="0" <?php echo ($results['user']->membership_permission == 0) ? 'selected' : ''; ?>>No</option>
     </select>
@@ -75,7 +75,7 @@
 
     <li>
     <label for="admin_permission">Admin Privlages:</label>
-    <select id="form_admin_permission" name="admin_permission">
+    <select id="admin_permission" name="admin_permission">
     <option value="1" <?php echo ($results['user']->admin_permission == 1) ? 'selected' : ''; ?>>Yes</option>
     <option value="0" <?php echo ($results['user']->admin_permission == 0) ? 'selected' : ''; ?>>No</option>
     </select>

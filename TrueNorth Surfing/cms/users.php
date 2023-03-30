@@ -89,7 +89,7 @@ public static function getList($numRows=10000) {
         $db_path = '../db/eventsDB.db';
         $conn = new PDO( 'sqlite:'.$db_path );
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "UPDATE user SET membership=:membership_permission, admin=:admin_permission WHERE user_id=:id";
+        $sql = "UPDATE user SET membership = :membership_permission, admin = :admin_permission WHERE user_id = :id";
         $st = $conn->prepare ( $sql );
         $st->bindValue( ":membership_permission", $this->membership_permission, PDO::PARAM_STR );
         $st->bindValue( ":admin_permission", $this->admin_permission, PDO::PARAM_STR );
@@ -107,7 +107,8 @@ public static function getList($numRows=10000) {
         $st = $conn->prepare ( $sql );
         $st->bindValue( ":username", $this->username, PDO::PARAM_STR );
         $st->bindValue( ":email", $this->email, PDO::PARAM_STR );
-        $st->bindValue( ":password", $this->password, PDO::PARAM_STR );
+        $hashedPassword = password_hash($this->password, PASSWORD_DEFAULT);
+        $st->bindValue( ":password", $hashedPassword, PDO::PARAM_STR );
         $st->bindValue( ":firstName", $this->firstName, PDO::PARAM_STR );
         $st->bindValue( ":lastName", $this->lastName, PDO::PARAM_STR );
         $st->bindValue( ":nickname", $this->nickname, PDO::PARAM_STR );
