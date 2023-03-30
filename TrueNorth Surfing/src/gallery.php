@@ -86,13 +86,15 @@ if (is_dir($target_dir)){
     function resetImg(img) {
         img.style.transform = "scale(1)";
         img.style.transition = "transform 0.5s ease";
+        img.all = "initial";
         img.style.zIndex = 0;
         img.style.display = "inline";
+        img.style.margin = ".5em";
     }
     function enlargeImg(img) {
         img.style.transform = "scale(5)";
         img.style.transition = "transform 0.5s ease";
-        img.style.zIndex = 5;
+        img.style.zIndex = 1000;
         img.style.display = "block";
         img.style.margin = "auto";
 
