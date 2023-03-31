@@ -4,7 +4,7 @@ include("scripts/functions.php");
 include("config.php");
 echo headSetup("TNSC - Basket", "../css/basket.css");
 echo headerSetup();
-echo genNav(array("index.php" => "Home", "gallery.php" => "Gallery", "contact.php" => "Contact Us", "signup.php" => "Sign Up", "members.php" => "For Members", "shop.php" => "Shop"));
+echo genNav(array("index.php" => "Home", "gallery.php" => "Gallery", "contact.php" => "Contact Us", "signup.php" => "Sign Up", "members.php" => "For Members", "shop.php" => "Shop", "admin.php" => "Admin"));
 echo headerClose();
 
 if (isset($_SESSION["basket"]) && count($_SESSION["basket"]) > 0) {
