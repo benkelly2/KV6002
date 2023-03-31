@@ -21,6 +21,8 @@ if (isset($_SESSION["basket"]) && count($_SESSION["basket"]) > 0) {
             echo '<button onclick="removeFromBasket(' . $product_id . ')">Remove from basket</button>';
             echo '</div>';
             echo '</div>';
+        }else {
+            unset($_SESSION["basket"][$product_id]);
         }
     }
     echo '</div>';
