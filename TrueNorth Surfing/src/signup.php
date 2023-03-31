@@ -38,7 +38,7 @@ function signUp() {
         
             // User has not posted the event edit form yet: display the form
             $results['user'] = new user;
-            require( TEMPLATE_PATH . "/signUpForm.php" );
+            require( TEMPLATE_PATH . "/signupForm.php" );
             }
 }
 function signedUp(){?>
@@ -47,4 +47,7 @@ function signedUp(){?>
   </div>
   <?php 
 }
+echo genFooter(array("cookies.php" => "Cookies Policy", "privacy.php" => "Privacy Policy"));
 echo bodyEnd();
+
+?>

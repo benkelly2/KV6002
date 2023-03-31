@@ -135,6 +135,6 @@ if (isset($_SESSION['admin_permision'])) {
 </form>
 <?php
 }
-
+echo genFooter(array("cookies.php" => "Cookies Policy", "privacy.php" => "Privacy Policy"));
 echo bodyEnd();
 ?>

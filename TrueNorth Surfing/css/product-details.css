@@ -26,7 +26,10 @@
     margin-right: 30px;
     margin-left: 50px;
   }
-  
+  .quantity-input {
+    width: 4em; /* Adjust this value to fit the width of three digits */
+    text-align: center;
+  }  
   
   /* Style the container for the product description and price */
   .product-details-info {

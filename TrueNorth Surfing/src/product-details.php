@@ -29,7 +29,8 @@ if ($product_id > 0) {
         echo "<p><h2 class='product-title'>" . $product->title . "</h2> </p>";
         echo "<p class='product-price'>£" . $product->price . "</p>";
         echo "<p class='product-description'>" . $product->description . "</p>";
-        echo "<button onclick='addToBasket(" . $product_id . ")'>Add to basket</button>";
+        echo "<input type='number' id='quantity-" . $product_id . "' value='1' min='1' max='10' class='quantity-input' />";
+        echo "<button onclick='addToBasket(" . $product_id . ")'>Add to basket</button>";        
         echo "</div>";
         echo "</div>";
     } else {
@@ -53,10 +54,13 @@ function addToBasket(productId) {
     };
     xhttp.open("POST", "scripts/add-to-basket.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("product_id=" + productId);
+    var quantity = document.getElementById("quantity-" + productId).value;
+    xhttp.send("product_id=" + productId + "&quantity=" + quantity);
+
 }
 </script>
 
 <?php
+echo genFooter(array("cookies.php" => "Cookies Policy", "privacy.php" => "Privacy Policy"));
 echo bodyEnd();
 ?>
