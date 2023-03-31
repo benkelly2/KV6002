@@ -69,7 +69,7 @@
                 <label class="notesLabel">We're nosey, how did you hear about us?</label>
                 <input type="text" class="notes" placeholder="Let us know..." name="notes">
             </div>
-            <input type="submit" class="submit" value="submit" name="submit">
+            <input type="submit" class="submit" value="Submit" name="submit">
         </form>
     </div>
 </form>
