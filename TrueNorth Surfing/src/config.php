@@ -15,6 +15,9 @@ require( "../cms/users.php");
 require( "../cms/shopData.php");
 
 
+
+
+
 function handleException( $exception ) {
     echo "Sorry, a problem occurred. Please try later.";
     echo ( $exception->getMessage() );

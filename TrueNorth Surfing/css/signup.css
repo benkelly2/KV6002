@@ -63,10 +63,6 @@
     background-color: #F1F1F1;
 }
 
-.sign-up-button {
-    height: 100px;
-}
-
 input[type=text] {
     width: 50vw;
     padding: 12px 20px;
@@ -99,4 +95,4 @@ input[type=submit] {
 
 input[type=submit]:hover {
     background-color: #6b6b6b;
-  }
+}

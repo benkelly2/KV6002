@@ -58,7 +58,7 @@
         echo "If you dont have an account please sign up and wait for an organiser to verify you"
         ?>
         <div id="adminLogin">
-          <a href="login.php?action=signUp"?>Sign Up</a></p>
+          <a href="signup.php"?>Sign Up</a></p>
         </div>
         <?php
   }
