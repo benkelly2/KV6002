@@ -4,6 +4,9 @@
 }
 
 body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
     margin: 0;
 }
 
@@ -81,7 +84,7 @@ body {
 .main-body {
     margin-left: 2em;
     margin-right: 2em;
-    height: 100%;
+    flex:1;
 }
 
 .tnsc-banner {
@@ -268,7 +271,6 @@ footer a:hover {
 
 .footer{
     display: flex;
-    margin-top: 5em;
 }
 
 .badge-icon{

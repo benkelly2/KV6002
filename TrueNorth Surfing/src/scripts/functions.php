@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="$cssFile">
         <link rel="stylesheet" href="https://use.typekit.net/wvm7epc.css">
+        <link rel="stylesheet" type="text/css" href="../lightbox/dist/css/lightbox.min.css">
+        <script src="../lightbox/dist/js/lightbox-plus-jquery.min.js"></script>
         <title>$title</title>
     </head>
 HEADCONTENT;
@@ -50,7 +52,7 @@ HEADERCLOSE;
     function bodyStart($title){
         $bodyCont = <<<BODY
         <body>
-            <div id="main-body">
+            <div class="main-body">
             <h1>$title</h1>
 BODY;
         $bodyCont .="\n";
@@ -66,7 +68,8 @@ FOOTERSETUP;
     }
 
     function genFooter(array $links){
-        $output = "<footer>\n";
+        $output = "</div>";
+        $output .= "<footer>\n";
         $output .= <<<OUTPUT
         <div class="footer">
             <a href="https://www.surfingengland.org/"><img class="badge-icon" src="../img/sufingengland.png" alt="Surfing England Badge"/></a>\n
@@ -87,9 +90,9 @@ FOOTERCLOSE;
         $footerClose .="\n";
         return $footerClose;
     }
+
     function bodyEnd(){
         $endBody = <<<BODYEND
-        </div>
         </body>
     </html>
 BODYEND;

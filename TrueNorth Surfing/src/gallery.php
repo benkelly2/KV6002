@@ -83,43 +83,19 @@ if (is_dir($target_dir)){
         'WhatsApp Image 2022-06-10 at 10.22.49 AM.jpeg'
     ];
 
-    function resetImg(img) {
-        img.style.transform = "scale(1)";
-        img.style.transition = "transform 0.5s ease";
-        img.all = "initial";
-        img.style.zIndex = 0;
-        img.style.display = "inline";
-        img.style.margin = ".5em";
-    }
-    function enlargeImg(img) {
-        img.style.transform = "scale(5)";
-        img.style.transition = "transform 0.5s ease";
-        img.style.zIndex = 1000;
-        img.style.display = "block";
-        img.style.margin = "auto";
-
-        document.addEventListener("click", function resetOnClick(e) {
-            if(!img.contains(e.target)) {
-                resetImg(img);
-                document.removeEventListener("click", resetOnClick);
-            }
-        });
-    }
+   
 
 
     for (let i=0; i<images.length; i++) {
+        let link = document.createElement("a");
         let img = document.createElement("img");
-        img.src = "../TNSC_Pictures/" + images[i];
+        const imageLink = "../TNSC_Pictures/" + images[i];
+        img.src = imageLink;
+        link.href = imageLink;
+        link.dataset.lightbox = "mygallery"
         img.style.zIndex = 0;
-        img.onclick = function() {
-            enlargeImg(this);
-        };
-        img.addEventListener("click", function(event) {
-            if(event.target.tagName === "IMG") {
-                enlargeImg(event.target);
-            }
-        });
-        gallery.appendChild(img);
+        link.appendChild(img);
+        gallery.appendChild(link);
     }
 
 </script>

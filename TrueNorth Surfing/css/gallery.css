@@ -2,13 +2,17 @@
     padding: 1em;
     margin: 0 auto;
     width: 100%;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 5vw);
+    grid-gap: 15px;
 }
 
 #gallery img {
-    height: 6em;
-    width: 9em;
-    margin: .5em;
+    height: 100%;
+    width: 100%;
     transition: transform 330ms ease-in-out;
+    object-fit: cover;
 }
 
 #gallery img:hover {
