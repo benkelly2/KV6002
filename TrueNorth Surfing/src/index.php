@@ -109,5 +109,6 @@ echo bodyStart("True North Surf Club");
 </script>
 
 <?php
+echo genFooter(array("cookies.php" => "Cookies Policy", "privacy.php" => "Privacy Policy"));
 echo bodyEnd();
 ?>

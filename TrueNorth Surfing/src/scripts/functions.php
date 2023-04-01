@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="$cssFile">
         <link rel="stylesheet" href="https://use.typekit.net/wvm7epc.css">
+        <link rel="stylesheet" type="text/css" href="../lightbox/dist/css/lightbox.min.css">
+        <script src="../lightbox/dist/js/lightbox-plus-jquery.min.js"></script>
         <title>$title</title>
     </head>
 HEADCONTENT;
@@ -25,15 +27,20 @@ HEADERSETUP;
         $header .="\n";
         return $header;
     }
-    function genNav(array $links){
-
-        $output = "<ul>\n";
-        foreach($links as $key=>$Value){
-            $output .= "<a = href='$key'>$Value</a>\n";
+    function genNav(array $links) {
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
         }
-        $output .= "\n";
+        $basketCount = isset($_SESSION["basket"]) ? count($_SESSION["basket"]) : 0;
+        $output = '<div class="header-nav">';
+        foreach ($links as $url => $label) {
+            $output .= "<a href=\"$url\">$label</a>";
+        }
+        $output .= "<a href=\"basket.php\"><i class=\"fas fa-shopping-basket\"></i><span id=\"basket-count\">$basketCount</span></a>";
+        $output .= '</div>';
         return $output;
-    }
+    }    
+    
     function headerClose(){
         $headerClose = <<<HEADERCLOSE
         </div>
@@ -45,7 +52,7 @@ HEADERCLOSE;
     function bodyStart($title){
         $bodyCont = <<<BODY
         <body>
-            <div id="main-body">
+            <div class="main-body">
             <h1>$title</h1>
 BODY;
         $bodyCont .="\n";
@@ -61,7 +68,8 @@ FOOTERSETUP;
     }
 
     function genFooter(array $links){
-        $output = "<footer>\n";
+        $output = "</div>";
+        $output .= "<footer>\n";
         $output .= <<<OUTPUT
         <div class="footer">
             <a href="https://www.surfingengland.org/"><img class="badge-icon" src="../img/sufingengland.png" alt="Surfing England Badge"/></a>\n
@@ -82,9 +90,9 @@ FOOTERCLOSE;
         $footerClose .="\n";
         return $footerClose;
     }
+
     function bodyEnd(){
         $endBody = <<<BODYEND
-        </div>
         </body>
     </html>
 BODYEND;
@@ -94,91 +102,7 @@ BODYEND;
     }
     // Add this code to your functions.php file
 
-    function getProductById($id) {
-        // Example product data
-        $products = [
-            [
-                'product_id' => 1,
-                'title' => 'TNSC T-Shirt',
-                'price' => 19.99,
-                'img' => '../TNSC_Pictures/TNSC_tshirt/11fdc54b-48c6-42f6-ac37-9dc6fe538ef6.jpeg',
-                'description' => 'A comfortable TNSC T-Shirt'
-            ],
-            [
-                'product_id' => 2,
-                'title' => 'TNSC Hoodie',
-                'price' => 39.99,
-                'img' => '../TNSC_Pictures/TNSC_tshirt/11fdc54b-48c6-42f6-ac37-9dc6fe538ef6.jpeg',
-                'description' => 'A comfortable TNSC T-Shirt'
-            ],
-            [
-                'product_id' => 3,
-                'title' => 'TNSC Cap',
-                'price' => 14.99,
-                'img' => '../TNSC_Pictures/TNSC_tshirt/11fdc54b-48c6-42f6-ac37-9dc6fe538ef6.jpeg',
-                'description' => 'A comfortable and stylish TNSC T-Shirt.'
-            ],
-            [
-                'product_id' => 4,
-                'title' => 'TNSC Wax',
-                'price' => '3.29',
-                'img' => '../TNSC_Pictures/TNSC_tshirt/11fdc54b-48c6-42f6-ac37-9dc6fe538ef6.jpeg',
-                'description' => 'A comfortable and stylish TNSC T-Shirt.'
-            ],
-            [
-                'product_id' => 5,
-                'title' => 'TNSC Membership',
-                'price' => '14.99',
-                'img' => '../TNSC_Pictures/TNSC_tshirt/11fdc54b-48c6-42f6-ac37-9dc6fe538ef6.jpeg',
-                'description' => 'A comfortable and stylish TNSC T-Shirt.'
-            ],
-            [
-                'product_id' => 6,
-                'title' => 'TNSC Membership',
-                'price' => '14.99',
-                'img' => '../TNSC_Pictures/TNSC_tshirt/11fdc54b-48c6-42f6-ac37-9dc6fe538ef6.jpeg',
-                'description' => 'A comfortable and stylish TNSC T-Shirt.'
-            ],
-            [
-                'product_id' => 7,
-                'title' => 'TNSC Membership',
-                'price' => '14.99',
-                'img' => '../TNSC_Pictures/TNSC_tshirt/11fdc54b-48c6-42f6-ac37-9dc6fe538ef6.jpeg',
-                'description' => 'A comfortable and stylish TNSC T-Shirt.'
-            ],
-            [
-                'product_id' => 8,
-                'title' => 'TNSC Membership',
-                'price' => '14.99',
-                'img' => '../TNSC_Pictures/TNSC_tshirt/11fdc54b-48c6-42f6-ac37-9dc6fe538ef6.jpeg',
-                'description' => 'A comfortable and stylish TNSC T-Shirt.'
-            ],
-            [
-                'product_id' => 9,
-                'title' => 'TNSC Membership',
-                'price' => '14.99',
-                'img' => '../TNSC_Pictures/TNSC_tshirt/11fdc54b-48c6-42f6-ac37-9dc6fe538ef6.jpeg',
-                'description' => 'A comfortable and stylish TNSC T-Shirt.'
-            ],
-            [
-                'product_id' => 10,
-                'title' => 'TNSC Membership',
-                'price' => '14.99',
-                'img' => '../TNSC_Pictures/TNSC_tshirt/11fdc54b-48c6-42f6-ac37-9dc6fe538ef6.jpeg',
-                'description' => 'A comfortable and stylish TNSC T-Shirt.'
-            ]
-        ];
-
-        // Search for the product with the given ID
-        foreach ($products as $product) {
-            if ($product['id'] == $id) {
-                return $product;
-            }
-        }
-
-        // If no matching product is found, return null
-        return null;
-}
+    
 
 
 ?>

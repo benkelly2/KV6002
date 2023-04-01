@@ -76,5 +76,7 @@ function loggedIn() {?>
   </div>
   <?php  
 }
+  echo genFooter(array("cookies.php" => "Cookies Policy", "privacy.php" => "Privacy Policy"));
   echo bodyEnd();
+  ?>
     

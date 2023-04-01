@@ -410,7 +410,7 @@ if ( isset( $_POST['saveChanges'] ) ) {
   
   $product->storeFormValues( $_POST );
   $product->insert();
-  header( "Location: admin.php?status=changesSaved" );
+  header( "Location: admin.php?action=viewProducts&status=changesSaved" );
 
 } elseif ( isset( $_POST['cancel'] ) ) {
 
@@ -458,7 +458,7 @@ function listProducts() {
     
 
 
-
+echo genFooter(array("cookies.php" => "Cookies Policy", "privacy.php" => "Privacy Policy"));
 echo bodyEnd();
     
 
