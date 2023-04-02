@@ -110,6 +110,7 @@
               ?>
             </tbody>
           </table>
+          <a href="#">Access all Photos on the Google Drive</a>
         </div>
       </div>
         <?php

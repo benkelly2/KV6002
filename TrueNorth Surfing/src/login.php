@@ -7,7 +7,7 @@ session_start();
 $action = isset( $_GET['action'] ) ? $_GET['action'] : "";
 $username = isset( $_SESSION['username'] ) ? $_SESSION['username'] : "";
 
-echo headSetup("TNSC - Home", "../css/login.css");
+echo headSetup("TNSC - Login", "../css/login.css");
 echo headerSetup();
 echo genNav(array("index.php" => "Home", "gallery.php" => "Gallery", "contact.php" => "Contact Us", "signup.php" => "Sign Up", "members.php" => "For Members", "shop.php" => "Shop", "admin.php" => "Admin"));
 echo headerClose();

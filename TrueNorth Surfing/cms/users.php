@@ -89,15 +89,17 @@ public static function getList($numRows=10000) {
         $db_path = '../db/eventsDB.db';
         $conn = new PDO( 'sqlite:'.$db_path );
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "UPDATE user SET membership = :membership_permission, admin = :admin_permission WHERE user_id = :id";
+        $sql = "UPDATE user SET membership = :membership_permission, admin = :admin_permission, notes = :notes WHERE user_id = :id";
         $st = $conn->prepare ( $sql );
         $st->bindValue( ":membership_permission", $this->membership_permission, PDO::PARAM_STR );
         $st->bindValue( ":admin_permission", $this->admin_permission, PDO::PARAM_STR );
+        $st->bindValue( ":notes", $this->notes, PDO::PARAM_STR );
         $st->bindValue( ":id", $this->user_id, PDO::PARAM_INT );
         $st->execute();
         $this->user_id = $conn->lastInsertId();
         $conn = null;
       }
+
   public function insert(){
     // Insert the code
         $db_path = '../db/eventsDB.db';

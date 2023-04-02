@@ -61,7 +61,7 @@
     </li>
     <li>
     <label for="notes">How Client Found Us:</label>
-    <input type="text" id="notes" name="notes" value="<?php echo $results['user']->notes; ?>" readonly>
+    <input type="text" id="notes" name="notes" value="<?php echo $results['user']->notes; ?>" readonly >
     </li>
 
 
@@ -80,7 +80,7 @@
     <option value="0" <?php echo ($results['user']->admin_permission == 0) ? 'selected' : ''; ?>>No</option>
     </select>
     </li>
-  
+
     </ul>
 
     <div class="buttons">
