@@ -8,7 +8,7 @@ $admin_permision = isset( $_SESSION['admin_permision'] ) ? $_SESSION['admin_perm
 
 
 include("scripts/functions.php");
-echo headSetup("TNSC - Home", "../css/style.css");
+echo headSetup("TNSC - Admin", "../css/admin.css");
 echo headerSetup();
 echo genNav(array("index.php" => "Home", "gallery.php" => "Gallery", "contact.php" => "Contact Us", "signup.php" => "Sign Up", "members.php" => "For Members", "shop.php" => "Shop", "admin.php" => "Admin"));
 echo headerClose();
@@ -143,7 +143,7 @@ function addEvent(){
     $results['formAction'] = 'addEvent';
 
     if ( isset( $_POST['saveChanges'] ) ) {
-        echo json_encode($_POST);
+      
         // User has posted the add event form: save the new event
         $event = new Event;
         
@@ -235,7 +235,7 @@ $results['pageTitle'] = "New Code";
 $results['formAction'] = 'addCode';
 
 if ( isset( $_POST['saveChanges'] ) ) {
-  echo json_encode($_POST);
+  
   // User has posted the add code form: save the new code
   $discount = new Discount;
   
@@ -404,7 +404,7 @@ $results['pageTitle'] = "New Product";
 $results['formAction'] = 'addProduct';
 
 if ( isset( $_POST['saveChanges'] ) ) {
-  echo json_encode($_POST);
+  
   // User has posted the add Product form: save the new Product
   $product = new Product;
   
