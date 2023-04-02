@@ -63,41 +63,46 @@
 
 
 
-    function viewEvent(){
-        $event = new Event();
-        $event = $event->getById(2);
-        require( TEMPLATE_PATH . "/viewEvent.php");
-    
-    }
-    
-    function memberContent(){
-    
-        $events = new Event();
-        $events = $events->getList(1000);
-        
-        // Loop through the events and echo out the information
-        foreach ($events as $event) {
+    function viewEvent(){?>
+      <div id="adminHeader">
+        <p>You are logged in as <b><?php echo htmlspecialchars( $_SESSION['username']) ?></b>. <a href="login.php?action=logout"?>Log out</a></p>
+      </div>
+      <div class="container">
+        <div class="events-box">
+          <h2>Events</h2>
+          <?php
+          $events = new Event();
+          $events = $events->getList(1000);
+          foreach ($events as $event) {
             if ($event->post_display == 1){
-                require( TEMPLATE_PATH . "/viewEvent.php");
+              require( TEMPLATE_PATH . "/viewEvent.php");
             }
-        }
-
-        $codes = new Discount();
-        $codes = $codes->getList();
-        ?>
-        <table>
-        <tr>
-          <th>Company</th>
-          <th>Code</th>
-        </tr>
-        <?php
-        foreach ($codes as $code) {
-            if ($code->code_display == 1){
-                require( TEMPLATE_PATH . "/viewDiscount.php");
-            }
-        }
-        ?>
-              </table>
+          }
+          ?>
+        </div>
+        <div class="codes-box">
+          <h2>Discount Codes</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Company</th>
+                <th>Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              $codes = new Discount();
+              $codes = $codes->getList();
+              foreach ($codes as $code) {
+                if ($code->code_display == 1){
+                  require( TEMPLATE_PATH . "/viewDiscount.php");
+                }
+              }
+              ?>
+            </tbody>
+          </table>
+        </div>
+      </div>
         <?php
         
     }

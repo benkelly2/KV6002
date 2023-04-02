@@ -1,3 +1,39 @@
+/* Style for the container holding the events and codes */
+.container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Style for the box containing the events */
+  .events-box {
+    width: 80%;
+  }
+  
+  /* Style for the box containing the codes */
+  .codes-box {
+    width: 20%;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  /* Style for the table holding the codes */
+  .codes-box table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Style for the table cells in the codes table */
+  .codes-box th,
+  .codes-box td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #fff;
+  }
+  
+  /* Style for the table header cells in the codes table */
+  .codes-box th {
+    background-color: #555;
+  }
 /* Add a box shadow to the event card */
 .event-card {
     box-shadow: 0 2px 4px rgba(0,0,0,.1);
@@ -40,7 +76,7 @@
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 20px;
-    color: rgb(129, 11, 11);
+    color: #333;
   }
   
   /* Style the post date */
