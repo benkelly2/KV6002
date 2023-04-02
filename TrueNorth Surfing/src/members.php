@@ -61,6 +61,9 @@
           <a href="signup.php"?>Sign Up</a></p>
         </div>
         <?php
+          echo genFooter(array("cookies.php" => "Cookies Policy", "privacy.php" => "Privacy Policy"));
+        ?>
+        <?php
   }
 
 
