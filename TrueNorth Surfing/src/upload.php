@@ -5,10 +5,9 @@ $action = isset($_GET['action']) ? $_GET['action'] : "";
 $username = isset($_SESSION['username']) ? $_SESSION['username'] : "";
 $admin_permision = isset($_SESSION['admin_permision']) ? $_SESSION['admin_permision'] : "";
 
-// Get the array from the HTML page using $_GET
-$images = isset($_GET['images']) ? json_decode($_GET['images']) : [];
 
-$target_dir = "../img/";
+
+$target_dir = "../TNSC_Pictures/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -25,15 +24,35 @@ if(isset($_POST["submit"])) {
   }
 }
 
-// Append the uploaded image to the array
-if ($uploadOk && isset($_FILES["fileToUpload"]["tmp_name"])) {
-  $filename = basename($_FILES["fileToUpload"]["name"]);
-  array_push($images, $filename);
-  echo "The file ". htmlspecialchars( $filename ) . " has been uploaded.";
+// Check if file already exists
+if (file_exists($target_file)) {
+  echo "Sorry, file already exists.";
+  $uploadOk = 0;
 }
 
-// Pass the updated array back to the HTML page using a redirect
-$images_query = http_build_query(array('images' => json_encode($images)));
-header('Location: gallery.php?' . $images_query);
-exit;
+// Check file size
+if ($_FILES["fileToUpload"]["size"] > 5000000) {
+  echo "Sorry, your file is too large.";
+  $uploadOk = 0;
+}
+
+// Allow certain file formats
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+&& $imageFileType != "gif" ) {
+  echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+  $uploadOk = 0;
+}
+
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+  echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+} else {
+  if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+    echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+  } else {
+    echo "Sorry, there was an error uploading your file.";
+  }
+}
 ?>
+          
