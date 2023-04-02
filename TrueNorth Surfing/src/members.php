@@ -10,7 +10,7 @@
     
     
     include("scripts/functions.php");
-    echo headSetup("TNSC - Home", "../css/style.css");
+    echo headSetup("TNSC - Members Page", "../css/members.css");
     echo headerSetup();
     echo genNav(array("index.php" => "Home", "gallery.php" => "Gallery", "contact.php" => "Contact Us", "signup.php" => "Sign Up", "members.php" => "For Members", "shop.php" => "Shop", "admin.php" => "Admin"));
     echo headerClose();
@@ -30,9 +30,6 @@
 
 
     switch ( $action ) {
-      case 'archive':
-        archive();
-        break;
       case 'viewEvent':
         viewEvent();
         break;
@@ -43,7 +40,7 @@
             addEvent();
             break;
       default:
-       archive();
+       memberContent();
     }
     
     //Members have to logged in to view content
@@ -73,10 +70,10 @@
     
     }
     
-    function archive(){
+    function memberContent(){
     
         $events = new Event();
-        $events = $events->getList(10);
+        $events = $events->getList(1000);
         
         // Loop through the events and echo out the information
         foreach ($events as $event) {

@@ -1,0 +1,64 @@
+/* Add a box shadow to the event card */
+.event-card {
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Style the event title */
+  #event-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #333;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  /* Style the event time, date, and location */
+  #event-time, #event-date, #event-location {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #666;
+  }
+  
+  /* Style the event details header */
+  #event-details {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0 10px;
+    color: #333;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+  }
+  
+  /* Style the event summary */
+  #event-summary {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: rgb(129, 11, 11);
+  }
+  
+  /* Style the post date */
+  #post-date {
+    font-size: 14px;
+    font-style: italic;
+    color: #999;
+  }
+  
+  /* Add some padding and border radius to the blockquote */
+  blockquote {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+  
+  /* Add some margin to the bottom of the blockquote */
+  blockquote p {
+    margin-bottom: 0;
+  }
