@@ -87,7 +87,7 @@ input[type=password]:focus {
 
 input[type=submit] {
     width: 50vw;
-    background-color: #7F7F7F;
+    background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
     margin: auto;
@@ -98,5 +98,5 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: #6b6b6b;
+    background-color: #3e8e41;
 }

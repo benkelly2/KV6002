@@ -67,6 +67,6 @@ function removeFromBasket(product_id) {
 
 </script>';
 
-echo genFooter(array("cookies.php" => "Cookies Policy", "privacy.php" => "Privacy Policy"));
 echo bodyEnd();
+echo genFooter(array("cookies.php" => "Cookies Policy", "privacy.php" => "Privacy Policy"));
 ?>
