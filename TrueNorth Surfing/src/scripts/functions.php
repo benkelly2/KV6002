@@ -36,7 +36,7 @@ HEADERSETUP;
         foreach ($links as $url => $label) {
             $output .= "<a href=\"$url\">$label</a>";
         }
-        $output .= "<a href=\"basket.php\"><img src=\"../TNSC_Pictures/basket.png\" alt=\"Basket\" class=\"basket-image\"><span id=\"basket-count\">$basketCount</span></a>";
+        $output .= "<a href=\"basket.php\"><img src=\"../TNSC_Pictures/basket/basket.png\" alt=\"Basket\" class=\"basket-image\"><span id=\"basket-count\">$basketCount</span></a>";
         $output .= '</div>';
         return $output;
     }
