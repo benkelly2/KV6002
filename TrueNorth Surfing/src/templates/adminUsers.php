@@ -61,7 +61,7 @@
     </li>
     <li>
     <label for="notes">How Client Found Us:</label>
-    <input type="text" id="notes" name="notes" value="<?php echo $results['user']->notes; ?>" readonly >
+    <input type="text" id="notes" name="notes" value="<?php echo $results['user']->notes; ?>" readonly>
     </li>
 
 
