@@ -9,15 +9,7 @@
             <div>
                 <label class="emailLabel">Email</label>
                 <input type="text" class="email" placeholder="Enter Email" name="email" required>
-            </div>
-            <div>
-                <label class="usernameLabel">Username</label>
-                <input type="text" class="username" placeholder="Enter Username" name="username" required>
-            </div>    
-            <div>
-                <label class="passwordLabel">Password</label>
-                <input type="text" class="password" placeholder="Enter Password" name="password" required>
-            </div>      
+            </div>     
             <div>
                 <label class="firstNameLabel">First Name</label>
                 <input type="text" class="firstName" placeholder="Enter Your First Name" name="firstName" required>

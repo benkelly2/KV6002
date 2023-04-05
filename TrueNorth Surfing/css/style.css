@@ -245,7 +245,7 @@ footer {
     background-color: rgb(194, 193, 193);
     color: #fff;
     /*padding: 20px;*/
-    margin-top: 50px;
+    margin-top: auto;
 }
 
 footer ul {
@@ -277,4 +277,7 @@ footer a:hover {
     height: 70px;
     width: auto;
 }
-
+.basket-image{
+    height:30px;
+    width:30px;
+}
