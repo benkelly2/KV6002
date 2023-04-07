@@ -1,5 +1,4 @@
 <?php
-ini_set( "display_errors", true);
 date_default_timezone_set( "GMT+0" );
 define( "ADMIN_USERNAME", "admin" );
 define( "ADMIN_PASSWORD", "admin" );
