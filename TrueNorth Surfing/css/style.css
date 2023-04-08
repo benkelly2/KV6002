@@ -277,6 +277,14 @@ footer a:hover {
     height: 70px;
     width: auto;
 }
+.social-icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;   
+    width: auto;
+    height: 35px;
+    padding-top: 4%;
+}
 .basket-image{
     height:30px;
     width:30px;

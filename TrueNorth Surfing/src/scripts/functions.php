@@ -68,7 +68,6 @@ BODY;
     function footerSetup(){
         $footer = <<<FOOTERSETUP
         <div class="footer">
-            <img class="badge-icon" src="../img/sufingengland.png" alt="Surfing England Badge"/>
 FOOTERSETUP;
         $footer .="\n";
         return $footer;
@@ -85,7 +84,11 @@ OUTPUT;
         foreach($links as $key=>$Value){
             $output .= "<li><a = href='$key'>$Value</a></li>\n";
         }
-        $output .= "\n";
+        $output .= "</ul>\n";
+        $output .= <<<OUTPUT
+        <div class="social-icon"><a href="https://www.instagram.com/truenorthsurf"><img class="social-icon" src="../img/instagram.png" alt="TNSC Instagram"/></a></div>\n
+        <div class="social-icon"><a href="https://www.facebook.com/truenorthsurf"><img class="social-icon" src="../img/facebook.png" alt="TNSC Facebook"/></a></div>\n
+OUTPUT;
         $output .= "</footer>\n";
         $output .= "</div>\n";
         return $output;
