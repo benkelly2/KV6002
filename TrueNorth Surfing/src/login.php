@@ -80,3 +80,4 @@ function loggedIn() {?>
   echo bodyEnd();
   ?>
     
+<?php include 'chatbot/chatbot.html'; ?>
