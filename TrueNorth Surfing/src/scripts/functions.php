@@ -1,3 +1,9 @@
+<!-- REFERENCE
+    Title: Lightbox
+    Author: Lokesh Dhakar
+    Date Accessed: 2/04/2023
+    Availability: https://lokeshdhakar.com/projects/lightbox2/#license
+-->
 <?php
     function headSetup($title, $cssFile){
         $headContent = <<<HEADCONTENT

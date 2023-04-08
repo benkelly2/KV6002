@@ -1,3 +1,9 @@
+<!-- REFERENCE
+    Title: Slideshow
+    Author: w3schools
+    Date Accessed: 9/03/2023
+    Availability: https://www.w3schools.com/howto/howto_js_slideshow.asp
+-->
 <?php
 //ini_set("session.save_path", "WHEREVER THE SESSION DATA FILE WILL BE");
 session_start();
@@ -47,7 +53,6 @@ echo bodyStart("True North Surf Club");
         <span class="dot" onclick="currentSlide(3)"></span>
     </div>
 
-    <!-- <img class="tnsc-banner" src="../img/TrueNorthSurfClubBanner.png" alt="True North Surf Club Banner"/> -->
         <div class="home-text-container">
             <div class="text-container-left">
                 <span>

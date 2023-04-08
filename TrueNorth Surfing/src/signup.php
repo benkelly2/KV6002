@@ -1,5 +1,4 @@
 <?php
-    // ini_set("session.save_path", "WHEREVER THE SESSION DATA FILE WILL BE");
     $action = isset( $_GET['action'] ) ? $_GET['action'] : "";
     session_start();
     include("scripts/functions.php");
