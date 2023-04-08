@@ -86,8 +86,8 @@ OUTPUT;
         }
         $output .= "</ul>\n";
         $output .= <<<OUTPUT
-        <div class="social-icon"><a href="https://www.instagram.com/truenorthsurf"><img class="social-icon" src="../img/instagram.png" alt="TNSC Instagram"/></a></div>\n
-        <div class="social-icon"><a href="https://www.facebook.com/truenorthsurf"><img class="social-icon" src="../img/facebook.png" alt="TNSC Facebook"/></a></div>\n
+        <a href="https://www.instagram.com/truenorthsurf"><img class="social-icon" src="../img/instagram.png" alt="TNSC Instagram"/></a>\n
+        <a href="https://www.facebook.com/truenorthsurf"><img class="social-icon" src="../img/facebook.png" alt="TNSC Facebook"/></a>\n
 OUTPUT;
         $output .= "</footer>\n";
         $output .= "</div>\n";

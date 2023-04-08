@@ -30,33 +30,11 @@ document.addEventListener("DOMContentLoaded", function() {
     $dir = "../TNSC_Pictures/TNSC_Gallery/";
     $images = array_diff(scandir($dir), array('..', '.'));
 
-    function compress_image($image_path) {
-      // Get image format
-      $image_mime_type = mime_content_type($image_path);
-  
-      // Compress image based on format
-      if ($image_mime_type == 'image/jpeg') {
-          $quality = 75;
-          $img = imagecreatefromjpeg($image_path);
-          imagejpeg($img, $image_path, $quality);
-      } elseif ($image_mime_type == 'image/png') {
-          $compression_level = 6;
-          $img = imagecreatefrompng($image_path);
-           imagepng($img, $image_path, $compression_level);
-      } elseif ($image_mime_type == 'image/gif') {
-          $img = imagecreatefromgif($image_path);
-          imagegif($img, $image_path);
-      }
-    }
   ?>
 
   // Loop through image filenames array and create img elements for each image
     <?php $i = 1; ?>
     <?php foreach ($images as $image): ?>
-    <?php
-    $image_path = $dir . $image;
-    compress_image($image_path);
-    ?>
     let link<?php echo $i; ?> = document.createElement("a");
     let img<?php echo $i; ?> = document.createElement("img");
     const imageLink<?php echo $i; ?> = "../TNSC_Pictures/TNSC_Gallery/<?php echo $image; ?>";
@@ -115,4 +93,4 @@ echo genFooter(array("cookies.php" => "Cookies Policy", "privacy.php" => "Privac
 echo bodyEnd();
 ?>
 
-<?php include 'chatbot/chatbot.html'; ?>
+<?php //include 'chatbot/chatbot.html'; ?>
