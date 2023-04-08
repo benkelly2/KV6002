@@ -12,7 +12,7 @@ require( "../cms/event.php");
 require( "../cms/discount.php");
 require( "../cms/users.php");
 require( "../cms/shopData.php");
-
+require( "../cms/review.php");
 
 
 

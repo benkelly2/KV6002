@@ -245,6 +245,9 @@ footer ul {
 }
 
 footer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     padding: 10px;
     text-decoration: none;
@@ -264,6 +267,12 @@ footer a:hover {
 .badge-icon{
     height: 70px;
     width: auto;
+}
+
+.social-icon{
+    width: auto;
+    height: 35px;
+    /*padding-top: 4%;*/
 }
 .basket-image{
     height:30px;

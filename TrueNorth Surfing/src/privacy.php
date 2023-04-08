@@ -17,7 +17,7 @@ echo bodyStart(null);
     True North Surf Club provides you with goods and services and is the data controller of the personal data that you provide when you order goods. The Data Protection Officer for True North Surf Club can be contacted via contact form that can be found at the bottom of this page.
   </p>
   <p>
-    This Privacy Policy describes how your personal information is collected, used, and shared when you visit or make a purchase from true-north-surf-club.sumupstore.com (the “Site”).
+    This Privacy Policy describes how your personal information is collected, used, and shared when you visit or make a purchase from true-north-surf-club.com (the “Site”).
   </p>
   <h2>Personal data we collect</h2>
   <p>
@@ -69,3 +69,4 @@ echo bodyStart(null);
 echo genFooter(array("cookies.php" => "Cookies Policy", "privacy.php" => "Privacy Policy"));
 echo bodyEnd();
 ?>
+<?php include 'chatbot/chatbot.html'; ?>

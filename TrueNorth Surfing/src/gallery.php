@@ -27,21 +27,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Fetch image filenames from directory using PHP
   <?php
-      $dir = "../TNSC_Pictures/TNSC_Gallery/";
-      $images = array_diff(scandir($dir), array('..', '.'));
+    $dir = "../TNSC_Pictures/TNSC_Gallery/";
+    $images = array_diff(scandir($dir), array('..', '.'));
+
   ?>
 
   // Loop through image filenames array and create img elements for each image
     <?php $i = 1; ?>
     <?php foreach ($images as $image): ?>
-    <?php     $image_path = "{$dir}{$image}";
-    $image_mime_type = mime_content_type($image_path);
-    if ($image_mime_type == 'image/jpeg') {
-        $quality = 60;
-        $img = imagecreatefromjpeg($image_path);
-        imagejpeg($img, $image_path, $quality);
-    }
-    ?>
     let link<?php echo $i; ?> = document.createElement("a");
     let img<?php echo $i; ?> = document.createElement("img");
     const imageLink<?php echo $i; ?> = "../TNSC_Pictures/TNSC_Gallery/<?php echo $image; ?>";
@@ -99,3 +92,5 @@ if (isset($_SESSION['admin_permision'])) {
 echo genFooter(array("cookies.php" => "Cookies Policy", "privacy.php" => "Privacy Policy"));
 echo bodyEnd();
 ?>
+
+<?php include 'chatbot/chatbot.html'; ?>

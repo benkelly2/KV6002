@@ -10,5 +10,6 @@
           <input class="codeButton" type="submit" name="codeButton" value="Discount Codes" />
           <input class="usersButton" type="submit" name="usersButton" value="Users" />
           <input class="productsButton" type="submit" name="productsButton" value="Products" />
+          <input class="reviewsButton" type="submit" name="reviewsButton" value="Reviews" />
 </div>
 </form>
