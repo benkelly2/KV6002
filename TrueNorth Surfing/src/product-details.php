@@ -36,6 +36,38 @@ if ($product_id > 0) {
         echo "<button onclick='addToBasket(" . $product_id . ")'>Add to basket</button>";        
         echo "</div>";
         echo "</div>";
+        
+        // Adrian Commit <<<<< Commit no.1 >>>>>>
+        // Display the review submission form
+        echo "<div class='review-form'>";
+        echo "<h3>Submit a review:</h3>";
+        echo "<form id='review-form'>";
+        echo "<input type='number' id='rating' value='1' min='1' max='5' class='rating-input' />";
+        echo "<textarea id='review-text' rows='4' cols='50' class='review-textarea'></textarea>";
+        echo "<button type='submit'>Submit review</button>";
+        echo "</form>";
+        echo "</div>";
+
+        // Display existing reviews
+        echo "<div class='reviews-container'>";
+        echo "<h3>Reviews:</h3>";
+        // Fetch and display the approved reviews for the product
+        $reviews = Review::getApprovedReviewsByProductId($product_id);
+        if (count($reviews) > 0) {
+            echo "<ul class='reviews-list'>";
+            foreach ($reviews as $review) {
+                echo "<li class='review-item'>";
+                echo "<span class='review-rating'>Rating: " . $review->rating . "/5</span>";
+                echo "<p class='review-text'>" . $review->review_text . "</p>";
+                //echo "<p class='review-sentiment'>Sentiment: " . $review->sentiment . " (Score: " . $review->compound_score . ")</p>";
+                echo "</li>";
+            }
+            echo "</ul>";
+        } else {
+          echo "<p>No reviews available for this product.</p>";
+        }
+        echo "</div>";
+        // End of commit no.1
     } else {
         echo "Product not found.";
     }
@@ -61,9 +93,39 @@ function addToBasket(productId) {
     xhttp.send("product_id=" + productId + "&quantity=" + quantity);
 
 }
+
+//ADRIAN COMMIT NO.2
+const form = document.querySelector('#review-form');
+const productId = <?= $product_id; ?>;
+
+form.addEventListener('submit', async (event) => {
+event.preventDefault();
+const rating = document.querySelector('#rating').value;
+const reviewText = document.querySelector('#review-text').value;
+
+const formData = new FormData();
+formData.append('product_id', productId);
+formData.append('rating', rating);
+formData.append('review_text', reviewText);
+
+const response = await fetch('submit_review.php', {
+  method: 'POST',
+  body: formData
+});
+
+if (response.ok) {
+  location.reload();
+} else {
+  console.error('Error submitting review');
+}
+});
+
+// END OF COMMIT NO.2
 </script>
 
 <?php
 echo genFooter(array("cookies.php" => "Cookies Policy", "privacy.php" => "Privacy Policy"));
 echo bodyEnd();
 ?>
+
+<?php include 'chatbot/chatbot.html'; ?>
