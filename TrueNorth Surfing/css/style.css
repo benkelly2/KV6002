@@ -87,17 +87,6 @@ body {
     flex:1;
 }
 
-.tnsc-banner {
-    /* original res == 1000x364 */
-    width: 75%;
-    height: auto;
-    display: block;
-    margin: auto;
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
-}
-
 .home-text-container {
     padding: 2em 0 2em 0;
     margin: auto;
@@ -121,7 +110,6 @@ body {
     background-color:  #F1F1F1;
     border: solid 1px black;
     border-bottom: 4px solid black;
-    /* box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3); */
     border-radius: 12px;
     padding: 1em;
 }
