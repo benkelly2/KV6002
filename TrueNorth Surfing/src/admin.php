@@ -463,10 +463,8 @@ function listProducts() {
   require( TEMPLATE_PATH . "/listShop.php" );
 }
 
-"""
-Commit -> Function viewReviews | deleteReviews
-"""
-    
+
+//ADRIAN COMMIT
 // Function to Display Reviews
 function viewReviews() 
 {
