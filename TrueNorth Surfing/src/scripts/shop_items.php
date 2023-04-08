@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         productItem.innerHTML = `
             <h2 class="product-title">${product.title}</h2>
             <img src="../TNSC_Pictures/TNSC_tshirt/shoplogo.png" alt="${product.title}" class="product-img">
-            <p class="product-price">£${product.price}</p>
+            <p class="product-price">£${parseFloat(product.price).toFixed(2)}</p>
         `;
         
         productItem.addEventListener('click', () => {

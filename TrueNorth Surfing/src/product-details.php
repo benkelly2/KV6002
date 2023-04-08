@@ -30,7 +30,7 @@ if ($product_id > 0) {
         echo "</div>";
         echo "<div class='product-details'>";
         echo "<p><h2 class='product-title'>" . $product->title . "</h2> </p>";
-        echo "<p class='product-price'>£" . $product->price . "</p>";
+        echo "<p class='product-price'>£" . number_format($product->price, 2) . "</p>";
         echo "<p class='product-description'>" . $product->description . "</p>";
         echo "<input type='number' id='quantity-" . $product_id . "' value='1' min='1' max='10' class='quantity-input' />";
         echo "<button onclick='addToBasket(" . $product_id . ")'>Add to basket</button>";        
