@@ -84,6 +84,13 @@ switch ( $action ) {
     case 'viewUsers':
       listUsers();
       break;
+    // Adrian Commit 
+    case 'viewReviews':
+      viewReviews();
+      break;
+    case 'deleteReview':
+      deleteReview();
+      break;
   default:
     adminHome();
 }
@@ -300,6 +307,9 @@ function adminHome() {
   if ( isset( $_POST['productsButton'] ) ) {
     header( "Location: admin.php?action=viewProducts" );
   }
+  if ( isset( $_POST['reviewsButton'] ) ) {
+    header( "Location: admin.php?action=viewReviews" );
+  }
   require( TEMPLATE_PATH . "/adminHome.php");
 }      
 
@@ -455,10 +465,33 @@ function listProducts() {
 
   require( TEMPLATE_PATH . "/listShop.php" );
 }
+
+
+//ADRIAN COMMIT
+// Function to Display Reviews
+function viewReviews() 
+{
+  $results = array();
+  $data = Review::getList();
+  $results['reviews'] = $data;
+  require( TEMPLATE_PATH . "/viewReviews.php" );
+}
+
+// Function to delete a review
+function deleteReview() {
+    if (isset($_POST['review_id'])) {
+        Review::deleteReview((int)$_POST['review_id']);
+        header("Location: admin.php?action=viewReviews&status=reviewDeleted");
+    } else {
+        header("Location: admin.php?action=viewReviews");
+    }
+}
     
 
 
 echo genFooter(array("cookies.php" => "Cookies Policy", "privacy.php" => "Privacy Policy"));
 echo bodyEnd();
+
+
     
 
