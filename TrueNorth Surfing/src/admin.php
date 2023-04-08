@@ -307,6 +307,9 @@ function adminHome() {
   if ( isset( $_POST['productsButton'] ) ) {
     header( "Location: admin.php?action=viewProducts" );
   }
+  if ( isset( $_POST['reviewsButton'] ) ) {
+    header( "Location: admin.php?action=viewReviews" );
+  }
   require( TEMPLATE_PATH . "/adminHome.php");
 }      
 
