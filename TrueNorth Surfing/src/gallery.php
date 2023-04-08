@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
   const gallery = document.getElementById("gallery");
 
-  // Fetch image filenames from directory using PHP
+  // Fetch image filenames from directory
   <?php
     $dir = "../TNSC_Pictures/TNSC_Gallery/";
     $images = array_diff(scandir($dir), array('..', '.'));
