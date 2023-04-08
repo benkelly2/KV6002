@@ -84,6 +84,13 @@ switch ( $action ) {
     case 'viewUsers':
       listUsers();
       break;
+    // Adrian Commit 
+    case 'viewReviews':
+      viewReviews();
+      break;
+    case 'deleteReview':
+      deleteReview();
+      break;
   default:
     adminHome();
 }
@@ -454,6 +461,29 @@ function listProducts() {
   }
 
   require( TEMPLATE_PATH . "/listShop.php" );
+}
+
+"""
+Commit -> Function viewReviews | deleteReviews
+"""
+    
+// Function to Display Reviews
+function viewReviews() 
+{
+  $results = array();
+  $data = Review::getList();
+  $results['reviews'] = $data;
+  require( TEMPLATE_PATH . "/viewReviews.php" );
+}
+
+// Function to delete a review
+function deleteReview() {
+    if (isset($_POST['review_id'])) {
+        Review::deleteReview((int)$_POST['review_id']);
+        header("Location: admin.php?action=viewReviews&status=reviewDeleted");
+    } else {
+        header("Location: admin.php?action=viewReviews");
+    }
 }
     
 
