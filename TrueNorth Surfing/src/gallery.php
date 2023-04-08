@@ -93,4 +93,4 @@ echo genFooter(array("cookies.php" => "Cookies Policy", "privacy.php" => "Privac
 echo bodyEnd();
 ?>
 
-<?php //include 'chatbot/chatbot.html'; ?>
+<?php include 'chatbot/chatbot.html'; ?>
