@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Fetch image filenames from directory using PHP
   <?php
-      $dir = "../TNSC_Pictures/";
+      $dir = "../TNSC_Pictures/TNSC_Gallery";
       $images = array_diff(scandir($dir), array('..', '.'));
   ?>
 
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
     <?php foreach ($images as $image): ?>
     let link<?php echo $i; ?> = document.createElement("a");
     let img<?php echo $i; ?> = document.createElement("img");
-    const imageLink<?php echo $i; ?> = "../TNSC_Pictures/<?php echo $image; ?>";
+    const imageLink<?php echo $i; ?> = "../TNSC_Pictures/TNSC_Gallery<?php echo $image; ?>";
     img<?php echo $i; ?>.src = imageLink<?php echo $i; ?>;
     link<?php echo $i; ?>.href = imageLink<?php echo $i; ?>;
     link<?php echo $i; ?>.dataset.lightbox = "mygallery";

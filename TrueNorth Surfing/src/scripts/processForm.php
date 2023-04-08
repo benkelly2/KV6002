@@ -1,3 +1,9 @@
+<!-- REFERENCE
+    Title: PHP Mailer
+    Author: Marcus Bointon
+    Date Accessed: 10/03/2023
+    Availability: https://github.com/PHPMailer
+-->
 <?php
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/src/scripts/PHPMailer-master/src/PHPMailer.php';
@@ -13,6 +19,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $message = $_POST['message'];
 
+    //validation
+    if (!empty($_POST['bot-field'])) {
+        // This field is invisible to humans, but not to bots
+        // If this field is filled in, then it's likely spam
+        header("Location: ../contact.php?message=Email+not+sent.+Please+try+again.");
+        exit();
+    }
+
+    // Check that name, email, and message are not empty
+    if (empty($name) || empty($email) || empty($message)) {
+        header("Location: ../contact.php?message=Email+not+sent.+Please+fill+in+all+fields.");
+        exit();
+    }
+
+    // Check that the email is valid
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        header("Location: ../contact.php?message=Email+not+sent.+Please+provide+a+valid+email+address.");
+        exit();
+    }
+
 	$mail = new PHPMailer(true);
 
 	$send_using_gmail = true;
@@ -25,12 +51,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$mail->Host = 'smtp.gmail.com';
 		$mail->Port = '587';
 		$mail->Sender = $email;
-		$mail->Username = "kv5732221@gmail.com"; // GMAIL username
-		$mail->Password = "szccudtechbzdmqw"; // app password
+		$mail->Username = "tnsc.contact@gmail.com"; // GMAIL username
+		$mail->Password = "pwxixkhowqddkmvk"; // app password
 	}
 	
 	//Typical mail data
-	$mail->AddAddress('kv5732221@gmail.com','admin');
+	$mail->AddAddress('tnsc.contact@gmail.com','admin');
 	$mail->AddReplyTo($email, $name);
 	$mail->Subject = "Message from $name";
 	$mail->Body = "$message";

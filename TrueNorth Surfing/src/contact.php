@@ -37,12 +37,15 @@ if (isset($_GET['message'])) {
     // display the message in a pop-up
     if($_GET['message'] == 'Email sent successfully'){
         echo '<script>alert("Email sent successfully.")</script>';
-    }
-    else{
-        echo '<script>alert("Error sending email. You will be redirected in 10 seconds.");setTimeout(function(){location.href="contact.php";},10000);</script>';
-    }
 ?>
 <div id="thankyou"><p>Thanks for your message! We will be in touch soon.</p></div>
+<?php
+    }
+    else{
+        echo '<script>alert("Error sending email.");setTimeout(function(){location.href="contact.php";},10);</script>';
+    }
+?>
+
 
 <?php
 }
