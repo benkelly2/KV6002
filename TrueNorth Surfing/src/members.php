@@ -110,7 +110,7 @@
               ?>
             </tbody>
           </table>
-          <iframe src="https://calendar.google.com/calendar/embed?height=500&wkst=1&bgcolor=%23616161&ctz=Europe%2FLondon&showTitle=0&showNav=1&hl=en_GB&src=N2UyNDRmNWI2YmMyMWNkNTRmZTU0MDM5NjNjODM4NzljY2EzZDhmYmM4NGRkMGU5ZDI0NDQwZjEzNDlhYTg5NkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23E67C73" style="border:solid 1px #777" width="350" height="500" frameborder="0" scrolling="no"></iframe>
+          <iframe src="https://calendar.google.com/calendar/embed?height=500&wkst=1&bgcolor=%23616161&ctz=Europe%2FLondon&showTitle=0&showNav=1&hl=en_GB&src=N2UyNDRmNWI2YmMyMWNkNTRmZTU0MDM5NjNjODM4NzljY2EzZDhmYmM4NGRkMGU5ZDI0NDQwZjEzNDlhYTg5NkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23E67C73" style="border:solid 1px #777" width="192" height="500" frameborder="0" scrolling="no"></iframe>
           <a href="#">Access all Photos on the Google Drive</a>
         </div>
       </div>
