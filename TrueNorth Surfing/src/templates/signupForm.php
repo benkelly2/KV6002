@@ -23,6 +23,14 @@
                 <input type="text" class="nickname" placeholder="Enter Your Nickname" name="nickname" >
             </div>
             <div>
+                <label class="usernameLabel">Username</label>
+                <input type="text" class="username" placeholder="Enter your username" name="username">
+            </div>
+            <div>
+                <label class="passwordLabel">Password</label>
+                <input type="text" class="password" placeholder="Enter your password" name="password">
+            </div>
+            <div>
                 <label class="dobLabel">Date of Birth (Membership is 18+)</label>
                 <input type="text" class="dob" placeholder="Enter Your Date of Birth" name="dob" required>
             </div>

@@ -46,7 +46,7 @@ function signedUp(){?>
   </div>
   <?php 
 }
-echo genFooter(array("cookies.php" => "Cookies Policy", "privacy.php" => "Privacy Policy"));
 echo bodyEnd();
+echo genFooter(array("cookies.php" => "Cookies Policy", "privacy.php" => "Privacy Policy"));
 
 ?>
