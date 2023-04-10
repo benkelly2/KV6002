@@ -6,9 +6,9 @@
 -->
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/src/scripts/PHPMailer-master/src/PHPMailer.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/src/scripts/PHPMailer-master/src/SMTP.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/src/scripts/PHPMailer-master/src/Exception.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/truenorth/src/scripts/PHPMailer-master/src/PHPMailer.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/truenorth/src/scripts/PHPMailer-master/src/SMTP.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/truenorth/src/scripts/PHPMailer-master/src/Exception.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
