@@ -16,3 +16,5 @@
     echo genFooter(array("cookies.php" => "Cookies Policy", "privacy.php" => "Privacy Policy"));
     echo bodyEnd();
 ?>
+
+<?php include 'chatbot/chatbot.html'; ?>
